@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #007BFF;
+  --color-primary-light: #6C91F8;
+  --color-primary-dark: #2E59DC;
+
+  --color-secondary: #28A745;
+  --color-secondary-light: #4CAF50;
+  --color-secondary-dark: #218838;
+
+  --color-accent: #E84347;
+
+  --color-gray-light: #F8F9FA;
+  --color-gray-medium: #ADB5BD;
+  --color-gray-dark: #343A40;
+
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
