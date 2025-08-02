@@ -1,0 +1,251 @@
+---
+// src/components/Servicios.astro
+
+const servicios = [
+  {
+    titulo: "Retiro de Puntos",
+    descripcion: "Procedimiento seguro y profesional para retirar puntos de sutura.",
+    imagen: "/enfermerosBucaramanga/images/servicios/retiro-puntos.jpg",
+    enlace: "/servicios/retiro-puntos",
+  },
+  {
+    titulo: "Nebulizaciones",
+    descripcion: "Aplicación de medicamentos en forma de aerosol para mejorar la respiración.",
+    imagen: "/enfermerosBucaramanga/images/servicios/nebulizaciones.jpg",
+    enlace: "/servicios/nebulizaciones",
+  },
+  {
+    titulo: "Paso de Líquidos",
+    descripcion: "Hidratación intravenosa segura en el hogar.",
+    imagen: "/enfermerosBucaramanga/images/servicios/paso-liquidos.jpg",
+    enlace: "/servicios/paso-liquidos",
+  },
+  {
+    titulo: "Inyectología",
+    descripcion: "Aplicación segura de inyecciones intramusculares, subcutáneas y más.",
+    imagen: "/enfermerosBucaramanga/images/servicios/inyectologia.jpg",
+    enlace: "/servicios/inyectologia",
+  },
+  {
+    titulo: "Sonda Vesical",
+    descripcion: "Colocación y manejo de sonda vesical con protocolo aséptico.",
+    imagen: "/enfermerosBucaramanga/images/servicios/sonda-vesical.jpg",
+    enlace: "/servicios/sonda-vesical",
+  },
+  {
+    titulo: "Cuidados Postoperatorios",
+    descripcion: "Monitoreo y apoyo tras cirugías para una recuperación óptima.",
+    imagen: "/enfermerosBucaramanga/images/servicios/cuidados-postoperatorios.jpg",
+    enlace: "/servicios/cuidados-postoperatorios",
+  },
+  {
+    titulo: "Curaciones",
+    descripcion: "Limpieza y vendaje de heridas con técnicas estériles.",
+    imagen: "/enfermerosBucaramanga/images/servicios/curaciones.jpg",
+    enlace: "/servicios/curaciones",
+  },
+  {
+    titulo: "Control de Signos Vitales",
+    descripcion: "Monitoreo regular de presión, temperatura, frecuencia, etc.",
+    imagen: "/enfermerosBucaramanga/images/servicios/signos-vitales.jpg",
+    enlace: "/servicios/signos-vitales",
+  },
+];
+
+// Clonamos el último y el primero para loop infinito
+const serviciosInfinito = [
+  servicios[servicios.length - 1], // clon del último
+  ...servicios,                   // servicios reales
+  servicios[0]                   // clon del primero
+];
+
+let autoPlayInterval;
+---
+
+<div class="relative max-w-7xl mx-auto px-6 py-12 overflow-visible">
+  <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Nuestros Servicios de Enfermería</h2>
+
+  <div class="relative overflow-visible">
+    <!-- Flecha anterior -->
+    <button
+      type="button"
+      id="prevBtn"
+      class="absolute -left-14 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-transform hover:scale-110"
+      aria-label="Servicio anterior"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+
+    <!-- Flecha siguiente -->
+    <button
+      type="button"
+      id="nextBtn"
+      class="absolute -right-14 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-transform hover:scale-110"
+      aria-label="Siguiente servicio"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+
+    <!-- Carrusel horizontal -->
+    <div
+      id="carousel"
+      class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 hide-scrollbar mx-4 lg:mx-6"
+      style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;"
+      data-total={servicios.length}
+    >
+      {serviciosInfinito.map((servicio, index) => (
+        <div
+          class="snap-start flex-shrink-0 w-80 lg:w-[384px] xl:w-[400px] mx-2 lg:mx-3 bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105"
+          data-index={index}
+        >
+          <img
+            src={servicio.imagen}
+            alt={servicio.titulo}
+            class="w-full h-48 object-cover"
+            loading="lazy"
+          />
+          <div class="p-5">
+            <h3 class="text-xl font-semibold text-gray-800">{servicio.titulo}</h3>
+            <p class="text-gray-600 mt-2">{servicio.descripcion}</p>
+            <a
+              href={servicio.enlace}
+              class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300"
+            >
+              Conocer más
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Puntos indicadores -->
+    <div class="flex justify-center mt-6 space-x-2">
+      {servicios.map((_, index) => (
+        <button
+          type="button"
+          data-index={index}
+          class="w-4 h-4 rounded-full transition duration-300 focus:outline-none focus:ring-2"
+          style="background-color: #d1d5db;"
+          aria-label={`Ir a servicio ${index + 1}`}
+        />
+      ))}
+    </div>
+  </div>
+</div>
+
+<!-- Ocultar scrollbar -->
+<style>
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<!-- Script: Carrusel infinito, responsive y con tamaño dinámico -->
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.getElementById("carousel");
+    const dots = document.querySelectorAll("[data-index]");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const totalReal = parseInt(carousel.getAttribute("data-total"));
+
+    // Función para obtener el ancho real de la primera tarjeta (responsive)
+    const getCardWidth = () => {
+      const firstCard = carousel.querySelector(".snap-start");
+      return firstCard ? firstCard.offsetWidth : 336; // fallback
+    };
+
+    const firstRealIndex = 1;
+    const lastRealIndex = totalReal;
+    const cloneEndIndex = totalReal + 1;
+
+    let currentIndex = firstRealIndex;
+    let isAnimating = false;
+
+    // Salto instantáneo (sin animación) para loop infinito
+    const jumpTo = (index) => {
+      isAnimating = true;
+      carousel.scrollTo({ left: index * getCardWidth(), behavior: "auto" });
+      setTimeout(() => isAnimating = false, 50);
+    };
+
+    // Actualiza color de puntos
+    const updateDots = () => {
+      const activeIndex = (currentIndex - 1 + totalReal) % totalReal;
+      dots.forEach((dot, i) => {
+        dot.style.backgroundColor = i === activeIndex ? "#2563eb" : "#d1d5db"; // azul activo, gris inactivo
+      });
+    };
+
+    // Navegar a un índice
+    const goTo = (index) => {
+      if (isAnimating) return;
+
+      if (index === 0) {
+        // Clon inicial → último real
+        jumpTo(lastRealIndex);
+        currentIndex = lastRealIndex;
+      } else if (index === cloneEndIndex) {
+        // Clon final → primer real
+        jumpTo(firstRealIndex);
+        currentIndex = firstRealIndex;
+      } else {
+        carousel.scrollTo({
+          left: index * getCardWidth(),
+          behavior: "smooth"
+        });
+        currentIndex = index;
+      }
+
+      updateDots();
+    };
+
+    // Eventos de flechas
+    nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
+    prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
+
+    // Eventos de puntos
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => goTo(i + 1));
+      dot.addEventListener("mouseenter", () => {
+        if (i !== (currentIndex - 1 + totalReal) % totalReal) {
+          dot.style.backgroundColor = "#60a5fa"; // azul claro
+        }
+      });
+      dot.addEventListener("mouseleave", () => {
+        if (i !== (currentIndex - 1 + totalReal) % totalReal) {
+          dot.style.backgroundColor = "#d1d5db"; // gris
+        }
+      });
+    });
+
+    // Autoplay cada 5 segundos
+    autoPlayInterval = setInterval(() => {
+      goTo(currentIndex + 1);
+    }, 5000);
+
+    // Detener autoplay al interactuar
+    const stopAutoplay = () => clearInterval(autoPlayInterval);
+    carousel.addEventListener("scroll", stopAutoplay, { once: true });
+    prevBtn.addEventListener("click", stopAutoplay);
+    nextBtn.addEventListener("click", stopAutoplay);
+    dots.forEach(dot => dot.addEventListener("click", stopAutoplay));
+
+    // Inicializar
+    jumpTo(firstRealIndex);
+    updateDots();
+
+    // Opcional: Recalcular anchos si cambia el tamaño de pantalla
+    window.addEventListener("resize", () => {
+      // Puedes recalcular si es necesario, pero no forzar scroll
+    });
+  });
+</script>
