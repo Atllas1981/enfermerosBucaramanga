@@ -1,5 +1,14 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
+import tailwind from "@tailwindcss/vite";
 
-// https://astro.build/config
-export default defineConfig({});
+// Configuración específica para GitHub Pages
+const repo = "enfermerosBucaramanga"; // nombre EXACTO del repo en GitHub
+
+export default defineConfig({
+  vite: {
+    plugins: [tailwind()],
+  },
+  site: `https://atllas1981.github.io/${repo}/`,
+  base: `/${repo}/`,
+  outDir: "dist",
+});

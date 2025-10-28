@@ -1,0 +1,109 @@
+---
+// Sin imports de React ni Lucide
+const phoneNumber = "573001234567";
+const message = encodeURIComponent("Hola, soy enfermero/a y me interesa unirme a su red profesional");
+---
+
+<section class="py-20" style="background: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 30% 98%) 100%);">
+  <div class="container mx-auto px-4">
+    <div
+      class="max-w-4xl mx-auto p-8 md:p-12 text-white border-0 rounded-lg"
+      style="background: linear-gradient(135deg, hsl(205 65% 35%) 0%, hsl(205 65% 45%) 100%); box-shadow: 0 20px 40px -10px hsl(210 20% 20% / 0.15);"
+    >
+      <div class="text-center mb-8 animate-fade-in">
+        <!-- UserPlus Icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="48"
+          height="48"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-12 w-12 mx-auto mb-4 text-[hsl(145_60%_45%)]"
+        >
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          ¿Eres Enfermero/a en Bucaramanga?
+        </h2>
+        <p class="text-xl text-white/90 mb-2">
+          Trabaja con dignidad, sin intermediarios
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <!-- Beneficio 1 -->
+        <div class="text-center">
+          <div class="h-12 w-12 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-3">
+            <!-- Heart Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-white">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/>
+            </svg>
+          </div>
+          <p class="text-white/90 text-sm">
+            Red ética que valora tu formación
+          </p>
+        </div>
+
+        <!-- Beneficio 2 -->
+        <div class="text-center">
+          <div class="h-12 w-12 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-3">
+            <!-- TrendingUp Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-white">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+            </svg>
+          </div>
+          <p class="text-white/90 text-sm">
+            Sin comisiones abusivas
+          </p>
+        </div>
+
+        <!-- Beneficio 3 -->
+        <div class="text-center">
+          <div class="h-12 w-12 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-3">
+            <!-- UserPlus Icon (repetido) -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-white">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <p class="text-white/90 text-sm">
+            Pago directo y justo
+          </p>
+        </div>
+      </div>
+
+      <p class="text-center text-white/90 mb-6 leading-relaxed">
+        Forma parte de una red ética que valora tu formación y experiencia.
+        Sin comisiones abusivas, sin explotación.
+      </p>
+
+      <div class="text-center">
+        <a
+          href={`https://wa.me/${phoneNumber}?text=${message}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-[hsl(145_60%_45%)] hover:bg-[hsl(145_60%_55%)] text-white font-semibold px-8 py-6 text-lg shadow-[0_10px_30px_-5px_hsl(210_20%_20%_/_0.12)] hover:shadow-[0_20px_40px_-10px_hsl(210_20%_20%_/_0.15)] transition-all duration-300 hover:scale-105 inline-block rounded-md"
+        >
+          <!-- UserPlus Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline mr-2 h-5 w-5">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          Únete a Nuestra Red
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+</style>
