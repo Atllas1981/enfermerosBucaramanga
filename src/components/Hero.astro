@@ -1,0 +1,97 @@
+---
+import heroImage from "../assets/hero-nurse-care.jpg";
+
+const phoneNumber = "573001234567";
+const message = encodeURIComponent("Hola, necesito solicitar una enfermera a domicilio");
+---
+
+<section class="relative min-h-screen flex items-center overflow-hidden">
+  <!-- Imagen de fondo con overlay -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src={heroImage.src}
+      alt="Enfermera profesional brindando cuidado domiciliario en Bucaramanga"
+      class="w-full h-full object-cover"
+    />
+    <div 
+      class="absolute inset-0"
+      style="background: linear-gradient(135deg, hsl(205 65% 35% / 0.95), hsl(205 65% 45% / 0.85), hsl(205 65% 35% / 0.7))"
+    ></div>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="container mx-auto px-4 py-20 relative z-10">
+    <div class="max-w-3xl animate-fade-in">
+      <!-- Badge legal -->
+      <div class="flex items-center gap-2 mb-6">
+        <!-- Shield Icon SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-[hsl(145_60%_45%)]">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <span class="text-[hsl(145_60%_45%)] font-medium">100% Legal y Certificado</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        Enfermería Profesional a Domicilio en Bucaramanga
+      </h1>
+
+      <p class="text-xl md:text-2xl text-white/90 mb-4 leading-relaxed">
+        Cuidado Seguro, Humano y Sin Intermediarios
+      </p>
+
+      <p class="text-lg md:text-xl text-white/80 mb-8 leading-relaxed">
+        Atención postoperatoria, cuidados paliativos y soporte médico en casa.
+        <span class="text-[hsl(145_60%_45%)] font-semibold"> Hasta un 50% más económico</span> que agencias tradicionales.
+        100% respaldado por el Ministerio de Salud.
+      </p>
+
+      <!-- Botones -->
+      <div class="flex flex-col sm:flex-row gap-4 mb-8">
+        <a
+          href={`https://wa.me/${phoneNumber}?text=${message}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-[hsl(145_60%_45%)] hover:bg-[hsl(145_60%_55%)] text-white font-semibold px-8 py-6 text-lg shadow-[0_10px_30px_-5px_hsl(210_20%_20%_/_0.12)] hover:shadow-[0_20px_40px_-10px_hsl(210_20%_20%_/_0.15)] transition-all duration-300 hover:scale-105 w-full sm:w-auto text-center inline-block rounded-md"
+        >
+          <!-- MessageCircle Icon SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline mr-2 h-5 w-5">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+          Solicitar Enfermera Ahora
+        </a>
+
+        <button
+          type="button"
+          class="bg-white/10 hover:bg-white/20 text-white border-2 border-white/30 backdrop-blur-sm font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105 w-full sm:w-auto rounded-md"
+          onclick="document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' });"
+        >
+          <!-- Heart Icon SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline mr-2 h-5 w-5">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/>
+          </svg>
+          Conocer Servicios
+        </button>
+      </div>
+
+      <!-- Ciudades -->
+      <div class="flex flex-wrap gap-6 text-white/90">
+        {['Bucaramanga', 'Floridablanca', 'Girón', 'Piedecuesta'].map((city) => (
+          <div class="flex items-center gap-2">
+            <div class="h-2 w-2 rounded-full bg-[hsl(145_60%_45%)]"></div>
+            <span class="text-sm font-medium">{city}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+</style>

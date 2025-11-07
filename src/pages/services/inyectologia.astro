@@ -1,0 +1,38 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
+import Footer from "../../components/Footer.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+
+const title = "Inyectología a Domicilio en Bucaramanga";
+const subtitle = "Aplicación Segura y Profesional de Medicamentos Inyectables";
+const description = "La inyectología domiciliaria es un servicio fundamental para quienes requieren aplicación de medicamentos por vía intramuscular, subcutánea o intradérmica. Nuestros enfermeros certificados realizan cada procedimiento con técnica correcta, garantizando la efectividad del tratamiento y minimizando molestias. Ideal para tratamientos prolongados, vacunas, antiinflamatorios, antibióticos y terapias de mantenimiento.";
+const benefits = [
+  "Aplicación por vía intramuscular, subcutánea e intradérmica según prescripción médica",
+  "Técnica indolora con agujas de calibre apropiado",
+  "Manejo seguro de medicamentos que requieren refrigeración",
+  "Registro detallado de cada aplicación y horarios",
+  "Rotación adecuada de sitios de punción para evitar complicaciones",
+  "Enfermeros capacitados en reacciones adversas y primeros auxilios",
+  "Servicio disponible para una sola aplicación o tratamientos prolongados"
+];
+---
+
+<Layout>
+  <ServicePageTemplate
+    title={title}
+    subtitle={subtitle}
+    description={description}
+    benefits={benefits}
+  >
+    <div slot="icon">
+      <!-- Syringe Icon SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-white">
+        <path d="M4 2v20l2-2 2 2 2-2 2 2 2-2 2 2V2l-2 2-2-2-2 2-2-2-2 2-2-2z"/><path d="M2 12h20"/>
+      </svg>
+    </div>
+  </ServicePageTemplate>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>

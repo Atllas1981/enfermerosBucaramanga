@@ -1,0 +1,38 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
+import Footer from "../../components/Footer.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+
+const title = "Manejo de Colostomías a Domicilio en Bucaramanga";
+const subtitle = "Cuidado Especializado y Humanizado de Ostomías";
+const description = "El manejo de colostomías, ileostomías y urostomías requiere conocimiento especializado, técnica correcta y un enfoque humanizado. Nuestros enfermeros profesionales brindan cuidado integral que incluye cambio de dispositivos, limpieza de la piel periostomal, prevención de complicaciones y educación al paciente y familia. Entendemos que vivir con una ostomía puede ser un desafío, por eso ofrecemos apoyo emocional además del cuidado técnico experto.";
+const benefits = [
+  "Cambio de bolsa colectora y barrera protectora con técnica correcta",
+  "Limpieza y cuidado de la piel periostomal para prevenir irritaciones",
+  "Evaluación del estoma y detección temprana de complicaciones",
+  "Educación completa al paciente y cuidadores sobre autocuidado",
+  "Recomendación de productos adecuados según tipo de ostomía",
+  "Apoyo emocional y consejos prácticos para mejorar calidad de vida",
+  "Enfermeros con experiencia en ostomías y certificación en cuidado de heridas"
+];
+---
+
+<Layout>
+  <ServicePageTemplate
+    title={title}
+    subtitle={subtitle}
+    description={description}
+    benefits={benefits}
+  >
+    <div slot="icon">
+      <!-- Heart Icon SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-white">
+        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/>
+      </svg>
+    </div>
+  </ServicePageTemplate>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>

@@ -1,0 +1,37 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
+import Footer from "../../components/Footer.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+
+const title = "Paso de Sondas Vesicales a Domicilio en Bucaramanga";
+const subtitle = "Cateterismo Urinario Profesional y Seguro";
+const description = "El paso o inserción de sonda vesical (cateterismo urinario) es un procedimiento especializado que requiere técnica estéril estricta para prevenir infecciones del tracto urinario. Este servicio es esencial para pacientes con retención urinaria, post-operatorios, personas con movilidad reducida o condiciones neurológicas que afectan la micción. Nuestros enfermeros certificados realizan el procedimiento con máxima delicadeza, respeto y profesionalismo.";
+const benefits = [
+  "Inserción de sonda vesical con técnica estéril rigurosa",
+  "Selección del calibre adecuado según el paciente",
+  "Manejo cuidadoso para minimizar molestias y trauma uretral",
+  "Fijación correcta de la sonda y bolsa recolectora",
+  "Capacitación al paciente y familia sobre cuidados del catéter",
+  "Prevención de infecciones mediante protocolos actualizados",
+  "Retiro de sonda cuando el médico lo indique, con seguimiento post-retiro"
+];
+---
+
+<Layout>
+  <ServicePageTemplate
+    title={title}
+    subtitle={subtitle}
+    description={description}
+    benefits={benefits}
+  >
+    <div slot="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-white">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+      </svg>
+    </div>
+  </ServicePageTemplate>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>
