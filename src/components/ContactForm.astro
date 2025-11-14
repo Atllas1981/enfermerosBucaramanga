@@ -5,7 +5,7 @@ const cities = [
   { value: "bucaramanga", label: "Bucaramanga" },
   { value: "floridablanca", label: "Floridablanca" },
   { value: "giron", label: "Girón" },
-  { value: "piedecuesta", label: "Piedecuesta" }
+  { value: "piedecuesta", label: "Piedecuesta" },
 ];
 
 const services = [
@@ -15,7 +15,7 @@ const services = [
   { value: "dispositivos", label: "Manejo de dispositivos médicos" },
   { value: "adultos", label: "Atención adultos mayores" },
   { value: "paliativos", label: "Cuidados paliativos" },
-  { value: "otro", label: "Otro servicio" }
+  { value: "otro", label: "Otro servicio" },
 ];
 ---
 
@@ -33,33 +33,7 @@ const services = [
     <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
       <!-- Formulario -->
       <div class="p-8 border-[hsl(210_20%_90%)] shadow-[0_4px_20px_-2px_hsl(210_20%_20%_/_0.08)] rounded-lg bg-[hsl(0_0%_100%)]">
-        <form
-          onsubmit={(e) => {
-            e.preventDefault();
-            const form = e.target;
-            const name = form.name.value.trim();
-            const phone = form.phone.value.trim();
-            const city = form.city.value;
-            const service = form.service.value;
-            const message = (form.message.value || "N/A").trim();
-
-            if (!name || !phone || !city || !service) {
-              alert("Por favor completa todos los campos obligatorios.");
-              return;
-            }
-
-            const text = encodeURIComponent(
-              `Hola, mi nombre es ${name}\n` +
-              `Teléfono: ${phone}\n` +
-              `Ciudad: ${city}\n` +
-              `Servicio: ${service}\n` +
-              `Mensaje: ${message}`
-            );
-
-            window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
-          }}
-          class="space-y-6"
-        >
+        <form id="contactForm" class="space-y-6">
           <div>
             <label for="name" class="block text-[hsl(210_20%_20%)] font-medium mb-1">Nombre completo *</label>
             <input
@@ -140,6 +114,7 @@ const services = [
           </div>
 
           <button
+            id="submitBtn"
             type="submit"
             class="w-full bg-[hsl(205_65%_35%)] hover:bg-[hsl(205_65%_45%)] text-white font-semibold px-6 py-3 rounded-md transition-all duration-300 flex items-center justify-center"
           >
@@ -156,29 +131,24 @@ const services = [
         </form>
       </div>
 
-      <!-- Información de contacto -->
+      <!-- Información lateral -->
       <div class="space-y-6">
-        <!-- Cobertura -->
-        <div class="p-6 border-[hsl(210_20%_90%)] shadow-[0_4px_20px_-2px_hsl(210_20%_20%_/_0.08)] rounded-lg">
+        <div class="p-6 border-[hsl(210_20%_90%)] shadow rounded-lg">
           <h3 class="font-semibold text-[hsl(210_20%_20%)] mb-2">Área de Cobertura</h3>
           <p class="text-[hsl(210_15%_45%)]">
             Bucaramanga, Floridablanca, Girón y Piedecuesta
           </p>
         </div>
 
-        <!-- WhatsApp -->
-        <div class="p-6 border-[hsl(210_20%_90%)] shadow-[0_4px_20px_-2px_hsl(210_20%_20%_/_0.08)] rounded-lg">
+        <div class="p-6 border-[hsl(210_20%_90%)] shadow rounded-lg">
           <h3 class="font-semibold text-[hsl(210_20%_20%)] mb-2">WhatsApp</h3>
-          <p class="text-[hsl(210_15%_45%)]">
-            +57 301 720 5354 <!-- ✅ Número visible actualizado -->
-          </p>
+          <p class="text-[hsl(210_15%_45%)]">+57 301 720 5354</p>
           <p class="text-sm text-[hsl(210_15%_45%)] mt-1">
             Respuesta inmediata en horario laboral
           </p>
         </div>
 
-        <!-- Email -->
-        <div class="p-6 border-[hsl(210_20%_90%)] shadow-[0_4px_20px_-2px_hsl(210_20%_20%_/_0.08)] rounded-lg">
+        <div class="p-6 border-[hsl(210_20%_90%)] shadow rounded-lg">
           <h3 class="font-semibold text-[hsl(210_20%_20%)] mb-2">Email</h3>
           <p class="text-[hsl(210_15%_45%)]">
             contacto@enfermeria-bucaramanga.com
@@ -188,12 +158,72 @@ const services = [
           </p>
         </div>
 
-        <!-- Urgente -->
         <div
           class="p-6 text-white rounded-lg"
           style="background: linear-gradient(135deg, hsl(145 60% 45%), hsl(145 60% 55%)); box-shadow: 0 10px 30px -5px hsl(210 20% 20% / 0.12);"
         >
-          <h3 class="font-semibold text-lg mb-2">
-            ¿Necesitas atención urgente?
-          </h3>
-          <p class="text-white/90 mb-
+          <h3 class="font-semibold text-lg mb-2">¿Necesitas atención urgente?</h3>
+          <p class="text-white/90 mb-4">
+            Contáctanos por WhatsApp para una respuesta inmediata
+          </p>
+          <button
+            id="urgentButton"
+            type="button"
+            class="w-full bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm font-medium py-2 rounded-md transition-all"
+          >
+            Contactar Ahora
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Script cliente -->
+<script is:client>
+  const phoneNumber = "573017205354";
+
+  // Botón de atención urgente
+  const urgentBtn = document.getElementById("urgentButton");
+  urgentBtn?.addEventListener("click", () => {
+    const msg = encodeURIComponent("Necesito atención urgente de enfermería a domicilio");
+    window.open(`https://wa.me/${phoneNumber}?text=${msg}`, "_blank");
+  });
+
+  // Formulario principal
+  const form = document.getElementById("contactForm");
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const name = data.get("name")?.toString().trim();
+    const phone = data.get("phone")?.toString().trim();
+    const city = data.get("city")?.toString();
+    const service = data.get("service")?.toString();
+    const message = data.get("message")?.toString().trim() || "N/A";
+
+    if (!name || !phone || !city || !service) {
+      alert("Por favor completa todos los campos obligatorios.");
+      return;
+    }
+
+    const text = encodeURIComponent(
+      `Hola, mi nombre es ${name}\n` +
+      `Teléfono: ${phone}\n` +
+      `Ciudad: ${city}\n` +
+      `Servicio: ${service}\n` +
+      `Mensaje: ${message}`
+    );
+
+    window.open(`https://wa.me/${phoneNumber}?text=${text}`, "_blank");
+  });
+</script>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+</style>
