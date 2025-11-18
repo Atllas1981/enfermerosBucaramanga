@@ -7,6 +7,9 @@ import WhatsAppButton from "../../components/WhatsAppButton.astro";
 const title = "Manejo de Colostomías a Domicilio en Bucaramanga";
 const subtitle = "Cuidado Especializado y Humanizado de Ostomías";
 const description = "El manejo de colostomías, ileostomías y urostomías requiere conocimiento especializado, técnica correcta y un enfoque humanizado. Nuestros enfermeros profesionales brindan cuidado integral que incluye cambio de dispositivos, limpieza de la piel periostomal, prevención de complicaciones y educación al paciente y familia. Entendemos que vivir con una ostomía puede ser un desafío, por eso ofrecemos apoyo emocional además del cuidado técnico experto.";
+
+const ogImage = "/og/colostomias.jpg";
+
 const benefits = [
   "Cambio de bolsa colectora y barrera protectora con técnica correcta",
   "Limpieza y cuidado de la piel periostomal para prevenir irritaciones",
@@ -18,7 +21,11 @@ const benefits = [
 ];
 ---
 
-<Layout>
+<Layout
+  title={title}
+  description={description}
+  image={ogImage}
+>
   <ServicePageTemplate
     title={title}
     subtitle={subtitle}
