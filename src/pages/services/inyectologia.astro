@@ -7,9 +7,12 @@ import WhatsAppButton from "../../components/WhatsAppButton.astro";
 const title = "Inyectología a Domicilio en Bucaramanga";
 const subtitle = "Aplicación Segura y Profesional de Medicamentos Inyectables";
 const description = "La inyectología domiciliaria es un servicio fundamental para quienes requieren aplicación de medicamentos por vía intramuscular, subcutánea o intradérmica. Nuestros enfermeros certificados realizan cada procedimiento con técnica correcta, garantizando la efectividad del tratamiento y minimizando molestias. Ideal para tratamientos prolongados, vacunas, antiinflamatorios, antibióticos y terapias de mantenimiento.";
+
+const ogImage = "/og/inyectologia.jpg";
+
 const benefits = [
   "Aplicación por vía intravenosa, subcutánea e intramuscular según prescripción médica",
-  "Técnica adecuada que facilita la absorción del medicamento, reduce el dolor durante la aplicación y previene lesiones por procedimientos inadecuados. ",
+  "Técnica adecuada que facilita la absorción del medicamento, reduce el dolor durante la aplicación y previene lesiones por procedimientos inadecuados.",
   "Manejo seguro de medicamentos que requieren cadena de frío, garantizando su estabilidad, eficacia y seguridad durante el transporte y almacenamiento.",
   "Registro detallado de cada aplicación y horarios",
   "Rotación adecuada de sitios de punción para evitar complicaciones",
@@ -18,7 +21,11 @@ const benefits = [
 ];
 ---
 
-<Layout>
+<Layout
+  title={title}
+  description={description}
+  image={ogImage}
+>
   <ServicePageTemplate
     title={title}
     subtitle={subtitle}
@@ -26,9 +33,9 @@ const benefits = [
     benefits={benefits}
   >
     <div slot="icon">
-      <!-- Syringe Icon SVG -->
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-white">
-        <path d="M4 2v20l2-2 2 2 2-2 2 2 2-2 2 2V2l-2 2-2-2-2 2-2-2-2 2-2-2z"/><path d="M2 12h20"/>
+        <path d="M4 2v20l2-2 2 2 2-2 2 2 2-2 2 2V2l-2 2-2-2-2 2-2-2-2 2-2-2z"/>
+        <path d="M2 12h20"/>
       </svg>
     </div>
   </ServicePageTemplate>

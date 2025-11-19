@@ -7,6 +7,9 @@ import WhatsAppButton from "../../components/WhatsAppButton.astro";
 const title = "Nebulizaciones a Domicilio en Bucaramanga";
 const subtitle = "Terapia Respiratoria Profesional en Casa";
 const description = "Las nebulizaciones domiciliarias son esenciales para el tratamiento de enfermedades respiratorias como asma, EPOC, bronquitis y otras afecciones pulmonares. Este procedimiento administra medicamentos en forma de vapor directamente a las vías respiratorias, proporcionando alivio rápido y efectivo. Nuestros enfermeros profesionales realizan la técnica correcta, asegurando la dosis adecuada y la respuesta del paciente durante todo el procedimiento.";
+
+const ogImage = "/og/nebulizaciones.jpg";
+
 const benefits = [
   "Preparación correcta de medicamentos según indicación médica",
   "Uso de nebulizadores profesionales y mascarillas de tamaño adecuado, personalizadas según las necesidades del paciente.",
@@ -18,7 +21,11 @@ const benefits = [
 ];
 ---
 
-<Layout>
+<Layout
+  title={title}
+  description={description}
+  image={ogImage}
+>
   <ServicePageTemplate
     title={title}
     subtitle={subtitle}
@@ -27,7 +34,9 @@ const benefits = [
   >
     <div slot="icon">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-white">
-        <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H21"/><path d="M14.7 11.7a2.5 2.5 0 1 1 1.8 4.3H21"/><path d="M11.7 15.7a2.5 2.5 0 1 1 1.8 4.3H21"/>
+        <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H21"/>
+        <path d="M14.7 11.7a2.5 2.5 0 1 1 1.8 4.3H21"/>
+        <path d="M11.7 15.7a2.5 2.5 0 1 1 1.8 4.3H21"/>
       </svg>
     </div>
   </ServicePageTemplate>

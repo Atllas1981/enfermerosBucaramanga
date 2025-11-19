@@ -7,6 +7,9 @@ import WhatsAppButton from "../../components/WhatsAppButton.astro";
 const title = "Paso de Sondas Vesicales a Domicilio en Bucaramanga";
 const subtitle = "Cateterismo Urinario Profesional y Seguro";
 const description = "El paso o inserción de sonda vesical (cateterismo urinario) es un procedimiento especializado que requiere técnica estéril estricta para prevenir infecciones del tracto urinario. Este servicio es esencial para pacientes con retención urinaria, post-operatorios, personas con movilidad reducida o condiciones neurológicas que afectan la micción. Nuestros enfermeros certificados realizan el procedimiento con máxima delicadeza, respeto y profesionalismo.";
+
+const ogImage = "/og/sondas-vesicales.jpg";
+
 const benefits = [
   "Inserción de sonda vesical con técnica estéril rigurosa",
   "Selección del calibre adecuado según el paciente",
@@ -18,7 +21,11 @@ const benefits = [
 ];
 ---
 
-<Layout>
+<Layout
+  title={title}
+  description={description}
+  image={ogImage}
+>
   <ServicePageTemplate
     title={title}
     subtitle={subtitle}
