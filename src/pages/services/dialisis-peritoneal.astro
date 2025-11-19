@@ -7,6 +7,9 @@ import WhatsAppButton from "../../components/WhatsAppButton.astro";
 const title = "Diálisis Peritoneal a Domicilio en Bucaramanga";
 const subtitle = "Conexión y Desconexión Segura por Enfermeros Especializados";
 const description = "La diálisis peritoneal es un tratamiento de reemplazo renal que permite mayor autonomía e independencia para pacientes con enfermedad renal crónica. Sin embargo, requiere técnica estrictamente estéril para prevenir peritonitis y otras complicaciones graves. Nuestros enfermeros especializados en nefrología realizan la conexión y desconexión del sistema de diálisis peritoneal con máxima seguridad, siguiendo protocolos internacionales de asepsia.";
+
+const ogImage = "/og/dialisis-peritoneal.jpg";
+
 const benefits = [
   "Conexión y desconexión con técnica estéril estricta",
   "Evaluación del líquido drenado (color, volumen, características)",
@@ -18,7 +21,11 @@ const benefits = [
 ];
 ---
 
-<Layout>
+<Layout
+  title={title}
+  description={description}
+  image={ogImage}
+>
   <ServicePageTemplate
     title={title}
     subtitle={subtitle}
@@ -26,7 +33,6 @@ const benefits = [
     benefits={benefits}
   >
     <div slot="icon">
-      <!-- Activity Icon SVG -->
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-white">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
       </svg>
