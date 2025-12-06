@@ -32,13 +32,9 @@ const benefits = [
     subtitle={subtitle}
     description={description}
     benefits={benefits}
+    heroImage="img/services/paso-de-sondas.webp" 
   >
-    <div slot="icon">
-      <!-- Icono general de servicios clínicos -->
-      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-white">
-        <path d="M12 2v20M2 12h20" />
-      </svg>
-    </div>
+    <!-- ❌ Sin slot "icon" para evitar el círculo/ícono en el Hero -->
   </ServicePageTemplate>
 
   <Footer />

@@ -7,6 +7,7 @@ import WhatsAppButton from "../../components/WhatsAppButton.astro";
 const title = "Procedimientos Personalizados a Domicilio en Bucaramanga";
 const subtitle = "Servicios de Enfermería Adaptados a tus Necesidades Específicas";
 const description = "Entendemos que cada paciente es único y puede requerir procedimientos o cuidados especializados que no están listados en los servicios estándar. Ya sea un procedimiento específico indicado por tu médico, combinación de varios servicios, o cuidados especiales post-operatorios, nuestros enfermeros profesionales se adaptan a tus necesidades. Nos especializamos en encontrar soluciones personalizadas para casos complejos o situaciones especiales.";
+
 const benefits = [
   "Evaluación personalizada de tus necesidades específicas de cuidado",
   "Coordinación directa con tu médico tratante para seguir indicaciones precisas",
@@ -18,18 +19,19 @@ const benefits = [
 ];
 ---
 
-<Layout>
+<Layout
+  title={title}
+  description={description}
+  image="/og/default.jpg" <!-- opcional, si tienes una imagen OG -->
+
   <ServicePageTemplate
     title={title}
     subtitle={subtitle}
     description={description}
     benefits={benefits}
-  >
-    <div slot="icon">
-      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-white">
-        <path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/><path d="M12 12V8"/><path d="M8 12v-1a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1"/>
-      </svg>
-    </div>
+    heroImage="img/services/default.webp">
+  
+    <!-- ❌ Sin slot "icon" para evitar el círculo/ícono en el Hero -->
   </ServicePageTemplate>
 
   <Footer />

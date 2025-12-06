@@ -17,7 +17,7 @@ const benefits = [
   "Limpieza con técnica aséptica y materiales estériles certificados",
   "Cambio de apósitos especializados según tipo de herida",
   "Identificación temprana de signos de infección o complicaciones",
-  "Enfermeros con experiencia en curaciones complejas y/ó terapia de drenaje post-quirúrgicas",
+  "Enfermeros con experiencia en curaciones complejas y/o terapia de drenaje post-quirúrgicas",
   "Atención en la comodidad de tu hogar en Bucaramanga y área metropolitana",
   "Comunicación directa con tu médico tratante si se requiere",
 ];
@@ -29,26 +29,21 @@ const benefits = [
     subtitle={subtitle}
     description={description}
     benefits={benefits}
+    heroImage="img/services/curaciones.webp"
   >
-    <div slot="icon">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="40"
-        height="40"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="h-10 w-10 text-white"
-      >
-        <path d="M4 7V4a2 2 0 0 1 2-2h2"></path><path d="M12 4v16"></path><path
-          d="M4 12h16"></path><path d="M16 20h2a2 2 0 0 0 2-2v-2"></path>
-      </svg>
-    </div>
+    
   </ServicePageTemplate>
 
   <Footer />
   <WhatsAppButton />
+
+  <!-- ✅ Ajuste: En escritorio, enfocar la parte inferior de la imagen de curaciones -->
+  <style>
+    @media (min-width: 768px) {
+      /* Selecciona el div de fondo que contiene la imagen de curaciones */
+      [style*="curaciones.webp"] {
+        background-position: center bottom !important;
+      }
+    }
+  </style>
 </Layout>
