@@ -1,6 +1,75 @@
-<section id="servicios" class="py-20 bg-[hsl(0_0%_100%)]">
+---
+const services = [
+  {
+    title: "Curaciones",
+    slug: "curaciones",
+    img: "curaciones.webp",
+    alt: "Servicio de Curaciones - Enfermería a Domicilio en Bucaramanga",
+    desc: "Cambio de apósitos, manejo de heridas quirúrgicas y cuidados especializados.",
+    objectPosition: "object-bottom"
+  },
+  {
+    title: "Inyectología",
+    slug: "inyectologia",
+    img: "inyectologia.webp",
+    alt: "Servicio de Inyectología - Aplicación segura de medicamentos en Bucaramanga",
+    desc: "Aplicación segura de medicamentos intramusculares, subcutáneos e intradérmicos."
+  },
+  {
+    title: "Paso de Sueros",
+    slug: "paso-de-sueros",
+    img: "paso-de-sueros.webp",
+    alt: "Servicio de Paso de Sueros - Hidratación y medicación intravenosa en Bucaramanga",
+    desc: "Hidratación y medicación intravenosa con monitoreo profesional."
+  },
+  {
+    title: "Nebulizaciones",
+    slug: "nebulizaciones",
+    img: "nebulizaciones.webp",
+    alt: "Servicio de Nebulizaciones - Terapia respiratoria en Bucaramanga",
+    desc: "Terapia respiratoria para asma, EPOC y otras afecciones pulmonares."
+  },
+  {
+    title: "Retiro de Puntos",
+    slug: "retiro-de-puntos",
+    img: "retiro-de-puntos.webp",
+    alt: "Servicio de Retiro de Puntos - Remoción segura de suturas en Bucaramanga",
+    desc: "Remoción segura de suturas post-quirúrgicas con evaluación de cicatrización."
+  },
+  {
+    title: "Paso de Sondas",
+    slug: "sondas-vesicales",
+    img: "paso-de-sondas.webp",
+    alt: "Servicio de Paso de Sondas - Vesicales, gástricas y nasogástricas en Bucaramanga",
+    desc: "Vesicales, gástricas, nasogástricas y nefrostomía, con técnica estéril y manejo profesional."
+  },
+  {
+    title: "Manejo de Colostomías",
+    slug: "colostomias",
+    img: "manejo-de-colostomias.webp",
+    alt: "Servicio de Manejo de Colostomías en Bucaramanga - Cuidado especializado con enfoque humanizado",
+    desc: "Cuidado especializado de colostomías con enfoque humanizado."
+  },
+  {
+    title: "Diálisis Peritoneal",
+    slug: "dialisis-peritoneal",
+    img: "dialisis-peritoneal.webp",
+    alt: "Servicio de Diálisis Peritoneal - Conexión y desconexión segura en Bucaramanga",
+    desc: "Conexión y desconexión segura con técnica estéril estricta."
+  },
+  {
+    title: "Otros Procedimientos",
+    slug: "procedimientos-personalizados",
+    img: "default.webp",
+    alt: "Otros Procedimientos de Enfermería - Servicios personalizados en Bucaramanga",
+    desc: "Servicios personalizados adaptados a tus necesidades específicas."
+  }
+];
+---
+
+<section id="servicios" class="py-20 bg-white">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-12 animate-fade-in">
+    <div class="text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-bold text-[hsl(210_20%_20%)] mb-4">
         Servicios de Enfermería a Domicilio
       </h2>
@@ -9,250 +78,61 @@
       </p>
     </div>
 
-    <div
-      class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-8"
-    >
-<!-- Servicio 1: Curaciones -->
-<a href="/enfermerosBucaramanga/services/curaciones" class="block">
-  <div
-    class="p-6 hover:shadow-[0_10px_30px_-5px_hsl(210_20%_20%_/_0.12)] transition-all duration-300 hover:-translate-y-1 animate-slide-up border-[hsl(210_20%_90%)] cursor-pointer h-full"
-    style="animation-delay: 0ms;"
-  >
-    <div class="flex flex-col items-center text-center">
-      <!-- Imagen principal con enfoque en la parte inferior -->
-      <img
-        src={import.meta.env.BASE_URL + 'img/services/curaciones.webp'}
-        alt="Servicio de Curaciones - Enfermería a Domicilio en Bucaramanga"
-        class="w-full h-48 object-cover object-bottom rounded-lg mb-4 shadow-[0_4px_20px_-2px_hsl(210_20%_20%_/_0.08)]"
-      />
-      <h3 class="font-semibold text-lg mb-2 text-[hsl(210_20%_20%)]">
-        Curaciones
-      </h3>
-      <p class="text-[hsl(210_15%_45%)] leading-relaxed">
-        Cambio de apósitos, manejo de heridas quirúrgicas y cuidados
-        especializados
-      </p>
-    </div>
-  </div>
-</a>
-      <!-- Servicio 2: Inyectología -->
-<a href="/enfermerosBucaramanga/services/inyectologia" class="block">
-  <div
-    class="p-6 hover:shadow-[0_10px_30px_-5px_hsl(210_20%_20%_/_0.12)] transition-all duration-300 hover:-translate-y-1 animate-slide-up border-[hsl(210_20%_90%)] cursor-pointer h-full"
-    style="animation-delay: 100ms;"
-  >
-    <div class="flex flex-col items-center text-center">
-      <!-- Imagen de Inyectología -->
-      <img
-        src={import.meta.env.BASE_URL + 'img/services/inyectologia.webp'}
-        alt="Servicio de Inyectología - Aplicación segura de medicamentos en Bucaramanga"
-        class="w-full h-48 object-cover rounded-lg mb-4 shadow-[0_4px_20px_-2px_hsl(210_20%_20%_/_0.08)]"
-      />
-      <h3 class="font-semibold text-lg mb-2 text-[hsl(210_20%_20%)]">
-        Inyectología
-      </h3>
-      <p class="text-[hsl(210_15%_45%)] leading-relaxed">
-        Aplicación segura de medicamentos intramusculares, subcutáneos e
-        intradérmicos
-      </p>
-    </div>
-  </div>
-</a>
-      <!-- Servicio 3: Paso de Sueros -->
-<a href="/enfermerosBucaramanga/services/paso-de-sueros" class="block">
-  <div
-    class="p-6 hover:shadow-[0_10px_30px_-5px_hsl(210_20%_20%_/_0.12)] transition-all duration-300 hover:-translate-y-1 animate-slide-up border-[hsl(210_20%_90%)] cursor-pointer h-full"
-    style="animation-delay: 200ms;"
-  >
-    <div class="flex flex-col items-center text-center">
-      <!-- Imagen de Paso de Sueros -->
-      <img
-        src={import.meta.env.BASE_URL + 'img/services/paso-de-sueros.webp'}
-        alt="Servicio de Paso de Sueros - Hidratación y medicación intravenosa en Bucaramanga"
-        class="w-full h-48 object-cover rounded-lg mb-4 shadow-[0_4px_20px_-2px_hsl(210_20%_20%_/_0.08)]"
-      />
-      <h3 class="font-semibold text-lg mb-2 text-[hsl(210_20%_20%)]">
-        Paso de Sueros
-      </h3>
-      <p class="text-[hsl(210_15%_45%)] leading-relaxed">
-        Hidratación y medicación intravenosa con monitoreo profesional
-      </p>
-    </div>
-  </div>
-</a>
+    <!-- Carrusel solo en móvil -->
+    <div class="md:hidden px-2">
+      <div id="carousel-track" class="flex gap-6 pb-8 overflow-x-auto scrollbar-hide -mx-2 px-2">
+        {services.map((s) => (
+          <a href={`/enfermerosBucaramanga/services/${s.slug}`} class="block w-80 shrink-0">
+            <div class="p-5 border border-[hsl(210_20%_90%)] rounded-xl h-full bg-white shadow-sm hover:shadow-md transition">
+              <img
+                src={import.meta.env.BASE_URL + `img/services/${s.img}`}
+                alt={s.alt}
+                class={`w-full h-40 object-cover rounded-lg mb-3 ${s.objectPosition || ''}`}
+              />
+              <h3 class="font-semibold text-lg text-[hsl(210_20%_20%)]">{s.title}</h3>
+              <p class="text-[hsl(210_15%_45%)] text-sm mt-1">{s.desc}</p>
+            </div>
+          </a>
+        ))}
+      </div>
 
-      <!-- Servicio 4: Nebulizaciones -->
-<a href="/enfermerosBucaramanga/services/nebulizaciones" class="block">
-  <div
-    class="p-6 hover:shadow-[0_10px_30px_-5px_hsl(210_20%_20%_/_0.12)] transition-all duration-300 hover:-translate-y-1 animate-slide-up border-[hsl(210_20%_90%)] cursor-pointer h-full"
-    style="animation-delay: 300ms;"
-  >
-    <div class="flex flex-col items-center text-center">
-      <!-- Imagen de Nebulizaciones -->
-      <img
-        src={import.meta.env.BASE_URL + 'img/services/nebulizaciones.webp'}
-        alt="Servicio de Nebulizaciones - Terapia respiratoria en Bucaramanga"
-        class="w-full h-48 object-cover rounded-lg mb-4 shadow-[0_4px_20px_-2px_hsl(210_20%_20%_/_0.08)]"
-      />
-      <h3 class="font-semibold text-lg mb-2 text-[hsl(210_20%_20%)]">
-        Nebulizaciones
-      </h3>
-      <p class="text-[hsl(210_15%_45%)] leading-relaxed">
-        Terapia respiratoria para asma, EPOC y otras afecciones pulmonares
-      </p>
-    </div>
-  </div>
-</a>
-
-      <!-- Servicio 5: Retiro de Puntos -->
-<a href="/enfermerosBucaramanga/services/retiro-de-puntos" class="block">
-  <div
-    class="p-6 hover:shadow-[0_10px_30px_-5px_hsl(210_20%_20%_/_0.12)] transition-all duration-300 hover:-translate-y-1 animate-slide-up border-[hsl(210_20%_90%)] cursor-pointer h-full"
-    style="animation-delay: 400ms;"
-  >
-    <div class="flex flex-col items-center text-center">
-      <!-- Imagen de Retiro de Puntos -->
-      <img
-        src={import.meta.env.BASE_URL + 'img/services/retiro-de-puntos.webp'}
-        alt="Servicio de Retiro de Puntos - Remoción segura de suturas en Bucaramanga"
-        class="w-full h-48 object-cover rounded-lg mb-4 shadow-[0_4px_20px_-2px_hsl(210_20%_20%_/_0.08)]"
-      />
-      <h3 class="font-semibold text-lg mb-2 text-[hsl(210_20%_20%)]">
-        Retiro de Puntos
-      </h3>
-      <p class="text-[hsl(210_15%_45%)] leading-relaxed">
-        Remoción segura de suturas post-quirúrgicas con evaluación de
-        cicatrización
-      </p>
-    </div>
-  </div>
-</a>
-      <!-- Servicio 6: Paso de Sondas -->
-<a href="/enfermerosBucaramanga/services/sondas-vesicales" class="block">
-  <div
-    class="p-6 hover:shadow-[0_10px_30px_-5px_hsl(210_20%_20%_/_0.12)] transition-all duration-300 hover:-translate-y-1 animate-slide-up border-[hsl(210_20%_90%)] cursor-pointer h-full"
-    style="animation-delay: 500ms;"
-  >
-    <div class="flex flex-col items-center text-center">
-      <!-- Imagen de Paso de Sondas -->
-      <img
-        src={import.meta.env.BASE_URL + 'img/services/paso-de-sondas.webp'}
-        alt="Servicio de Paso de Sondas - Vesicales, gástricas y nasogástricas en Bucaramanga"
-        class="w-full h-48 object-cover rounded-lg mb-4 shadow-[0_4px_20px_-2px_hsl(210_20%_20%_/_0.08)]"
-      />
-      <h3 class="font-semibold text-lg mb-2 text-[hsl(210_20%_20%)]">
-        Paso de Sondas
-      </h3>
-      <p class="text-[hsl(210_15%_45%)] leading-relaxed">
-        Vesicales, gástricas, nasogástricas y nefrostomía, realizadas con
-        técnica estéril y manejo profesional.
-      </p>
-    </div>
-  </div>
-</a>
-
-
-<!-- Servicio 7: Manejo de Colostomías -->
-<a href="/enfermerosBucaramanga/services/colostomias" class="block">
-  <div
-    class="p-6 hover:shadow-[0_10px_30px_-5px_hsl(210_20%_20%_/_0.12)] transition-all duration-300 hover:-translate-y-1 animate-slide-up border-[hsl(210_20%_90%)] cursor-pointer h-full"
-    style="animation-delay: 600ms;"
-  >
-    <div class="flex flex-col items-center text-center">
-      <!-- Imagen de Manejo de Colostomías -->
-      <img
-        src={import.meta.env.BASE_URL + 'img/services/manejo-de-colostomias.webp'}
-        alt="Servicio de Manejo de Colostomías en Bucaramanga - Cuidado especializado con enfoque humanizado"
-        class="w-full h-48 object-cover rounded-lg mb-4 shadow-[0_4px_20px_-2px_hsl(210_20%_20%_/_0.08)]"
-      />
-      <h3 class="font-semibold text-lg mb-2 text-[hsl(210_20%_20%)]">
-        Manejo de Colostomías
-      </h3>
-      <p class="text-[hsl(210_15%_45%)] leading-relaxed">
-        Cuidado especializado de colostomías con enfoque humanizado.
-      </p>
-    </div>
-  </div>
-</a>
-
-
-
-     <!-- Servicio 8: Diálisis Peritoneal -->
-<a href="/enfermerosBucaramanga/services/dialisis-peritoneal" class="block">
-  <div
-    class="p-6 hover:shadow-[0_10px_30px_-5px_hsl(210_20%_20%_/_0.12)] transition-all duration-300 hover:-translate-y-1 animate-slide-up border-[hsl(210_20%_90%)] cursor-pointer h-full"
-    style="animation-delay: 700ms;"
-  >
-    <div class="flex flex-col items-center text-center">
-      <!-- Imagen de Diálisis Peritoneal -->
-      <img
-        src={import.meta.env.BASE_URL + 'img/services/dialisis-peritoneal.webp'}
-        alt="Servicio de Diálisis Peritoneal - Conexión y desconexión segura en Bucaramanga"
-        class="w-full h-48 object-cover rounded-lg mb-4 shadow-[0_4px_20px_-2px_hsl(210_20%_20%_/_0.08)]"
-      />
-      <h3 class="font-semibold text-lg mb-2 text-[hsl(210_20%_20%)]">
-        Diálisis Peritoneal
-      </h3>
-      <p class="text-[hsl(210_15%_45%)] leading-relaxed">
-        Conexión y desconexión segura con técnica estéril estricta
-      </p>
-    </div>
-  </div>
-</a>
-
-      <!-- Servicio 9: Otros Procedimientos -->
-      <a
-        href="/enfermerosBucaramanga/services/procedimientos-personalizados"
-        class="block"
-      ><div
-  class="p-6 hover:shadow-[0_10px_30px_-5px_hsl(210_20%_20%_/_0.12)] transition-all duration-300 hover:-translate-y-1 animate-slide-up border-[hsl(210_20%_90%)] cursor-default h-full"
-  style="animation-delay: 800ms;"
->
-  <div class="flex flex-col items-center text-center">
-    <!-- Imagen genérica para "Otros Procedimientos" -->
-    <img
-      src={import.meta.env.BASE_URL + 'img/services/default.webp'}
-      alt="Otros Procedimientos de Enfermería - Servicios personalizados en Bucaramanga"
-      class="w-full h-48 object-cover rounded-lg mb-4 shadow-[0_4px_20px_-2px_hsl(210_20%_20%_/_0.08)]"
-    />
-    <h3 class="font-semibold text-lg mb-2 text-[hsl(210_20%_20%)]">
-      Otros Procedimientos
-    </h3>
-    <p class="text-[hsl(210_15%_45%)] leading-relaxed">
-      Servicios personalizados adaptados a tus necesidades específicas
-    </p>
-  </div>
-</div>
-      </a>
+      <div class="flex flex-col items-center gap-3 mt-4">
+        <div id="indicators" class="flex gap-2"></div>
+        <div class="flex justify-between w-full max-w-72">
+          <button id="prev-btn" aria-label="Anterior" class="p-2.5 rounded-full text-[hsl(210_20%_20%)] bg-white/70 hover:bg-white hover:shadow-sm transition text-4xl">‹</button>
+          <button id="next-btn" aria-label="Siguiente" class="p-2.5 rounded-full text-[hsl(210_20%_20%)] bg-white/70 hover:bg-white hover:shadow-sm transition text-4xl">›</button>
+        </div>
+      </div>
     </div>
 
-    <!-- Tarjeta de contacto adicional -->
+    <!-- Grid en tablet y escritorio -->
+    <div class="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-8">
+      {services.map((s) => (
+        <a href={`/enfermerosBucaramanga/services/${s.slug}`} class="block">
+          <div class="p-6 border border-[hsl(210_20%_90%)] rounded-xl h-full bg-white hover:shadow-[0_10px_30px_-5px_hsl(210_20%_20%_/_0.12)] transition-all duration-300 hover:-translate-y-1">
+            <img
+              src={import.meta.env.BASE_URL + `img/services/${s.img}`}
+              alt={s.alt}
+              class={`w-full h-48 object-cover rounded-lg mb-4 shadow-[0_4px_20px_-2px_hsl(210_20%_20%_/_0.08)] ${s.objectPosition || ''}`}
+            />
+            <h3 class="font-semibold text-lg text-[hsl(210_20%_20%)] mb-2">{s.title}</h3>
+            <p class="text-[hsl(210_15%_45%)] leading-relaxed">{s.desc}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Tarjeta de contacto -->
     <div class="text-center">
-      <div
-        class="inline-block p-6 bg-[hsl(30_15%_95%)] border-[hsl(210_20%_90%)]"
-      >
+      <div class="inline-block p-6 bg-[hsl(30_15%_95%)] border-[hsl(210_20%_90%)] rounded-xl">
         <div class="flex items-center gap-3 flex-wrap justify-center">
-          <!-- Home Icon -->
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-6 w-6 text-[hsl(205_65%_35%)]"
-          >
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-            ></path><polyline points="9 22 9 12 15 12 15 22"></polyline>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-[hsl(205_65%_35%)]">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
           </svg>
           <p class="text-[hsl(210_15%_45%)]">
             ¿Necesitas un servicio no listado?
-            <span class="font-semibold text-[hsl(210_20%_20%)]">
-              Contáctanos.</span
-            > Nos adaptamos a tu caso.
+            <span class="font-semibold text-[hsl(210_20%_20%)]">Contáctanos.</span> Nos adaptamos a tu caso.
           </p>
         </div>
       </div>
@@ -260,32 +140,60 @@
   </div>
 </section>
 
+<script is:client>
+  if (typeof window !== 'undefined' && window.innerWidth < 768) {
+    const init = () => {
+      const track = document.getElementById('carousel-track');
+      const prev = document.getElementById('prev-btn');
+      const next = document.getElementById('next-btn');
+      const dots = document.getElementById('indicators');
+      if (!track || !prev || !next || !dots) return;
+      const cards = Array.from(track.children);
+      if (cards.length === 0) return;
+      let index = 0;
+      let autoplay = null;
+      cards.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.setAttribute('aria-label', `Ir a servicio ${i + 1}`);
+        dot.className = 'w-2 h-2 rounded-full bg-gray-300';
+        dot.addEventListener('click', () => goTo(i));
+        dots.appendChild(dot);
+      });
+      const update = () => {
+        dots.querySelectorAll('button').forEach((d, i) => {
+          d.className = i === index
+            ? 'w-2 h-2 rounded-full bg-[hsl(210_100%_50%)]'
+            : 'w-2 h-2 rounded-full bg-gray-300';
+        });
+      };
+      const goTo = (i) => {
+        index = ((i % cards.length) + cards.length) % cards.length;
+        track.scrollTo({ left: cards[index].offsetLeft, behavior: 'smooth' });
+        update();
+      };
+      const startAuto = () => {
+        if (autoplay) clearInterval(autoplay);
+        autoplay = setInterval(() => goTo(index + 1), 4000);
+      };
+      prev.addEventListener('click', () => { clearInterval(autoplay); goTo(index - 1); startAuto(); });
+      next.addEventListener('click', () => { clearInterval(autoplay); goTo(index + 1); startAuto(); });
+      update();
+      startAuto();
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  }
+</script>
+
 <style>
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
-  @keyframes slide-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  .animate-fade-in {
-    animation: fade-in 0.6s ease-out forwards;
-  }
-  .animate-slide-up {
-    animation: slide-up 0.6s ease-out forwards;
-    opacity: 0;
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 </style>
