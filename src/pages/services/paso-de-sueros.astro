@@ -1,0 +1,39 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
+import Footer from "../../components/Footer.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+
+const title = "Paso de Sueros a Domicilio en Bucaramanga";
+const subtitle = "Hidratación y Medicación Intravenosa en Casa";
+const description = "El paso de sueros o terapia intravenosa domiciliaria permite administrar líquidos, electrolitos y medicamentos directamente al torrente sanguíneo de manera segura y controlada. Este servicio es ideal para rehidratación, administración de antibióticos, analgésicos, vitaminas o tratamientos que requieren vía intravenosa. Nuestros enfermeros profesionales garantizan una canalización exitosa, monitoreo constante y manejo de posibles complicaciones.";
+
+const ogImage = "/og/paso-de-sueros.jpg";
+
+const benefits = [
+  "Canalización venosa con técnica estéril y materiales desechables",
+  "Administración de soluciones según prescripción médica exacta",
+  "Monitoreo continuo de signos vitales durante la infusión",
+  "Manejo de goteo y tiempo de administración preciso",
+  "Identificación temprana de flebitis, infiltración o reacciones adversas",
+  "Retiro seguro del catéter y curación del sitio de punción",
+  "Enfermeros con experiencia en accesos venosos difíciles"
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  image={ogImage}
+>
+  <ServicePageTemplate
+    title={title}
+    subtitle={subtitle}
+    description={description}
+    benefits={benefits}
+    heroImage="img/services/paso-de-sueros.webp" >
+  </ServicePageTemplate>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>
