@@ -21,29 +21,32 @@ const testimonials = [
     location: "Piedecuesta"
   },
   {
-    text: "Contraté el servicio de diálisis peritoneal y quedé impresionado por la puntualidad, la limpieza y la calidez humana. Enfermería con dignidad, así debe ser.",
+    text: "Contraté el servicio de diálisis peritoneal y quedé impresionado por la puntualidad, la limpieza y la calidez humana.",
     name: "Elena G.",
     location: "Bucaramanga"
   },
   {
-    text: "Encontré un servicio honesto, humano y profesional. Mi mamá recibió sus curaciones con tanto respeto que hasta sonreía. Gracias por cuidar de nosotros.",
+    text: "Encontré un servicio honesto, humano y profesional. Mi mamá recibió sus curaciones con tanto respeto que hasta sonreía.",
     name: "Jorge D.",
     location: "Lebrija"
   }
 ];
 ---
 
-<section class="py-4 bg-white">
+<section class="py-4 bg-white" aria-labelledby="testimonials-heading">
   <div class="container mx-auto px-4">
 
-    <div class="text-center mb-12 animate-fade-in">
-      <h2 class="text-3xl md:text-4xl font-bold text-[hsl(210_20%_20%)] mb-4">
+    <header class="text-center mb-12 animate-fade-in">
+      <h2
+        id="testimonials-heading"
+        class="text-3xl md:text-4xl font-bold text-[hsl(210_20%_20%)] mb-4"
+      >
         Lo Que Dicen Nuestros Pacientes
       </h2>
       <p class="text-xl text-[hsl(210_15%_45%)]">
-        Experiencias reales de quienes confiaron en nosotros
+        Experiencias reales de atención de enfermería a domicilio
       </p>
-    </div>
+    </header>
 
     <!-- Carrusel móvil -->
     <div class="md:hidden px-2">
@@ -52,31 +55,23 @@ const testimonials = [
         class="flex gap-6 pb-8 overflow-x-auto scrollbar-hide -mx-2 px-2 scroll-smooth"
       >
         {testimonials.map((t) => (
-          <div class="w-80 shrink-0 p-6 border border-[hsl(210_20%_90%)] rounded-xl bg-white shadow-sm relative">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="h-10 w-10 text-[hsl(205_65%_35%_/_0.2)] absolute top-4 right-4"
-            >
-              <path d="M3 21c3 0 7-2 7-5a4 4 0 0 0-8-2 1 1 0 0 1-1-1V5a2 2 0 0 1 2-2c4 0 8 2 8 6a5 5 0 0 1-10 3v1a1 1 0 0 0 1 1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3z"/>
-              <path d="M15 21c3 0 7-2 7-5a4 4 0 0 0-8-2 1 1 0 0 1-1-1V5a2 2 0 0 1 2-2c4 0 8 2 8 6a5 5 0 0 1-10 3v1a1 1 0 0 0 1 1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-6z"/>
-            </svg>
+          <figure class="w-80 shrink-0 p-6 border border-[hsl(210_20%_90%)] rounded-xl bg-white shadow-sm relative">
 
-            <div class="relative z-10">
+            <span class="sr-only">
+              Testimonio de paciente de enfermería domiciliaria en {t.location}
+            </span>
+
+            <blockquote class="relative z-10">
               <p class="text-[hsl(210_15%_45%)] italic mb-4">
-                "{t.text}"
+                “{t.text}”
               </p>
-              <div class="border-t border-[hsl(210_20%_90%)] pt-4">
-                <p class="font-semibold text-[hsl(210_20%_20%)]">{t.name}</p>
-                <p class="text-sm text-[hsl(210_15%_45%)]">{t.location}</p>
-              </div>
-            </div>
-          </div>
+            </blockquote>
+
+            <figcaption class="border-t border-[hsl(210_20%_90%)] pt-4">
+              <p class="font-semibold text-[hsl(210_20%_20%)]">{t.name}</p>
+              <p class="text-sm text-[hsl(210_15%_45%)]">{t.location}</p>
+            </figcaption>
+          </figure>
         ))}
       </div>
     </div>
@@ -84,18 +79,25 @@ const testimonials = [
     <!-- Grid desktop -->
     <div class="hidden md:grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       {testimonials.map((t, i) => (
-        <div
-          class="p-6 border border-[hsl(210_20%_90%)] animate-slide-up relative"
+        <figure
+          class="p-6 border border-[hsl(210_20%_90%)] animate-slide-up"
           style={`animation-delay:${i * 100}ms`}
         >
-          <p class="italic text-[hsl(210_15%_45%)] mb-4">
-            "{t.text}"
-          </p>
-          <div class="border-t pt-4">
+          <span class="sr-only">
+            Opinión de paciente sobre enfermería a domicilio en {t.location}
+          </span>
+
+          <blockquote>
+            <p class="italic text-[hsl(210_15%_45%)] mb-4">
+              “{t.text}”
+            </p>
+          </blockquote>
+
+          <figcaption class="border-t pt-4">
             <p class="font-semibold">{t.name}</p>
             <p class="text-sm text-[hsl(210_15%_45%)]">{t.location}</p>
-          </div>
-        </div>
+          </figcaption>
+        </figure>
       ))}
     </div>
 
@@ -129,7 +131,6 @@ const testimonials = [
     initTestimonialsAutoplay();
   }
 </script>
-
 
 <style>
 .scrollbar-hide::-webkit-scrollbar { display: none; }

@@ -1,5 +1,5 @@
 ---
-const phoneNumber = "573017205354"; // ✅ Número actualizado
+const phoneNumber = "573017205354";
 
 const cities = [
   { value: "bucaramanga", label: "Bucaramanga" },
@@ -13,218 +13,181 @@ const services = [
   { value: "curaciones", label: "Curaciones complejas" },
   { value: "medicamentos", label: "Administración de medicamentos" },
   { value: "dispositivos", label: "Manejo de dispositivos médicos" },
-  { value: "adultos", label: "Atención adultos mayores" },
+  { value: "adultos", label: "Atención a adultos mayores" },
   { value: "paliativos", label: "Cuidados paliativos" },
   { value: "sueroterapia", label: "Sueroterapia Post-Party" },
   { value: "otro", label: "Otro servicio" },
 ];
 ---
 
-<section id="contacto" class="py-20 bg-[hsl(0_0%_100%)]">
+<section id="contacto" class="py-20 bg-white">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-12 animate-fade-in">
+
+    <!-- Encabezado SEO -->
+    <header class="text-center mb-12 animate-fade-in">
       <h2 class="text-3xl md:text-4xl font-bold text-[hsl(210_20%_20%)] mb-4">
         Contáctanos
       </h2>
       <p class="text-xl text-[hsl(210_15%_45%)]">
-        Estamos listos para cuidarte con responsabilidad, calidez y profesionalismo
+        Atención de enfermería a domicilio en Bucaramanga y su área metropolitana
       </p>
-    </div>
+    </header>
 
     <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+
       <!-- Formulario -->
-      <div class="p-8 border-[hsl(210_20%_90%)] shadow-[0_4px_20px_-2px_hsl(210_20%_20%_/_0.08)] rounded-lg bg-[hsl(0_0%_100%)]">
-        <form id="contactForm" class="space-y-6">
+      <div class="p-8 border-[hsl(210_20%_90%)] shadow-[0_4px_20px_-2px_hsl(210_20%_20%_/_0.08)] rounded-lg bg-white">
+        <form id="contactForm" class="space-y-6" aria-label="Formulario de contacto de enfermería a domicilio">
+
           <div>
-            <label for="name" class="block text-[hsl(210_20%_20%)] font-medium mb-1">Nombre completo *</label>
+            <label for="name" class="block font-medium text-[hsl(210_20%_20%)] mb-1">
+              Nombre completo *
+            </label>
             <input
+              id="name"
               name="name"
               type="text"
               placeholder="Tu nombre"
-              class="w-full mt-1 px-4 py-2 border border-[hsl(210_20%_90%)] rounded-md focus:outline-none focus:ring-2 focus:ring-[hsl(205_65%_45%)]"
               required
+              class="w-full px-4 py-2 border border-[hsl(210_20%_90%)] rounded-md focus:ring-2 focus:ring-[hsl(205_65%_45%)]"
             />
           </div>
 
           <div>
-            <label for="phone" class="block text-[hsl(210_20%_20%)] font-medium mb-1">Teléfono *</label>
+            <label for="phone" class="block font-medium text-[hsl(210_20%_20%)] mb-1">
+              Teléfono *
+            </label>
             <input
+              id="phone"
               name="phone"
               type="tel"
               placeholder="301 720 5354"
-              class="w-full mt-1 px-4 py-2 border border-[hsl(210_20%_90%)] rounded-md focus:outline-none focus:ring-2 focus:ring-[hsl(205_65%_45%)]"
               required
+              class="w-full px-4 py-2 border border-[hsl(210_20%_90%)] rounded-md focus:ring-2 focus:ring-[hsl(205_65%_45%)]"
             />
           </div>
 
-          <!-- Ciudad -->
           <div>
-            <label for="city" class="block text-[hsl(210_20%_20%)] font-medium mb-1">Ciudad *</label>
-            <div class="relative">
-              <select
-                name="city"
-                class="w-full mt-1 px-4 py-2 pr-10 appearance-none bg-white border border-[hsl(210_20%_90%)] rounded-md focus:outline-none focus:ring-2 focus:ring-[hsl(205_65%_45%)] text-[hsl(210_20%_20%)]"
-                required
-              >
-                <option value="">Selecciona tu ciudad</option>
-                {cities.map((city) => (
-                  <option value={city.value}>{city.label}</option>
-                ))}
-              </select>
-              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="text-[hsl(145_60%_45%)]">
-                  <polyline points="6 9 12 15 18 9"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          <!-- Servicio -->
-          <div>
-            <label for="service" class="block text-[hsl(210_20%_20%)] font-medium mb-1">Tipo de servicio *</label>
-            <div class="relative">
-              <select
-                name="service"
-                class="w-full mt-1 px-4 py-2 pr-10 appearance-none bg-white border border-[hsl(210_20%_90%)] rounded-md focus:outline-none focus:ring-2 focus:ring-[hsl(205_65%_45%)] text-[hsl(210_20%_20%)]"
-                required
-              >
-                <option value="">Selecciona un servicio</option>
-                {services.map((service) => (
-                  <option value={service.value}>{service.label}</option>
-                ))}
-              </select>
-              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="text-[hsl(145_60%_45%)]">
-                  <polyline points="6 9 12 15 18 9"/>
-                </svg>
-              </div>
-            </div>
+            <label for="city" class="block font-medium text-[hsl(210_20%_20%)] mb-1">
+              Ciudad *
+            </label>
+            <select
+              id="city"
+              name="city"
+              required
+              class="w-full px-4 py-2 border border-[hsl(210_20%_90%)] rounded-md focus:ring-2 focus:ring-[hsl(205_65%_45%)]"
+            >
+              <option value="">Selecciona tu ciudad</option>
+              {cities.map(city => (
+                <option value={city.value}>{city.label}</option>
+              ))}
+            </select>
           </div>
 
           <div>
-            <label for="message" class="block text-[hsl(210_20%_20%)] font-medium mb-1">Mensaje adicional (opcional)</label>
+            <label for="service" class="block font-medium text-[hsl(210_20%_20%)] mb-1">
+              Tipo de servicio *
+            </label>
+            <select
+              id="service"
+              name="service"
+              required
+              class="w-full px-4 py-2 border border-[hsl(210_20%_90%)] rounded-md focus:ring-2 focus:ring-[hsl(205_65%_45%)]"
+            >
+              <option value="">Selecciona un servicio</option>
+              {services.map(service => (
+                <option value={service.value}>{service.label}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block font-medium text-[hsl(210_20%_20%)] mb-1">
+              Mensaje adicional (opcional)
+            </label>
             <textarea
+              id="message"
               name="message"
+              rows="4"
               placeholder="Cuéntanos más sobre tu caso..."
-              class="w-full mt-1 px-4 py-2 border border-[hsl(210_20%_90%)] rounded-md focus:outline-none focus:ring-2 focus:ring-[hsl(205_65%_45%)] min-h-[100px]"
+              class="w-full px-4 py-2 border border-[hsl(210_20%_90%)] rounded-md focus:ring-2 focus:ring-[hsl(205_65%_45%)]"
             ></textarea>
           </div>
 
           <button
-            id="submitBtn"
             type="submit"
-            class="w-full bg-[hsl(205_65%_35%)] hover:bg-[hsl(205_65%_45%)] text-white font-semibold px-6 py-3 rounded-md transition-all duration-300 flex items-center justify-center"
+            class="w-full bg-[hsl(205_65%_35%)] hover:bg-[hsl(205_65%_45%)] text-white font-semibold py-3 rounded-md transition"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-5 w-5">
-              <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
-            </svg>
-            Enviar Solicitud
+            Enviar solicitud
           </button>
 
-          <p class="text-sm text-[hsl(210_15%_45%)] text-center">
+          <p class="text-sm text-center text-[hsl(210_15%_45%)]">
             Al enviar, serás redirigido a WhatsApp para completar tu solicitud
           </p>
         </form>
       </div>
 
       <!-- Información lateral -->
-      <div class="space-y-6">
+      <aside class="space-y-6">
+
         <div class="p-6 border-[hsl(210_20%_90%)] shadow rounded-lg">
-          <h3 class="font-semibold text-[hsl(210_20%_20%)] mb-2">Área de Cobertura</h3>
-          <p class="text-[hsl(210_15%_45%)]">
-            Bucaramanga, Floridablanca, Girón y Piedecuesta
-          </p>
+          <h3 class="font-semibold mb-2">Área de cobertura</h3>
+          <p>Bucaramanga, Floridablanca, Girón y Piedecuesta</p>
         </div>
 
         <div class="p-6 border-[hsl(210_20%_90%)] shadow rounded-lg">
-          <h3 class="font-semibold text-[hsl(210_20%_20%)] mb-2">WhatsApp</h3>
-          <p class="text-[hsl(210_15%_45%)]">+57 301 720 5354</p>
-          <p class="text-sm text-[hsl(210_15%_45%)] mt-1">
+          <h3 class="font-semibold mb-2">WhatsApp</h3>
+          <p>+57 301 720 5354</p>
+          <p class="text-sm text-[hsl(210_15%_45%)]">
             Respuesta inmediata en horario laboral
           </p>
         </div>
 
         <div class="p-6 border-[hsl(210_20%_90%)] shadow rounded-lg">
-          <h3 class="font-semibold text-[hsl(210_20%_20%)] mb-2">Email</h3>
-          <p class="text-[hsl(210_15%_45%)]">
-            contacto@enfermeria-bucaramanga.com
-          </p>
-          <p class="text-sm text-[hsl(210_15%_45%)] mt-1">
-            Respuesta en 24-48 horas
+          <h3 class="font-semibold mb-2">Email</h3>
+          <p>contacto@enfermeria-bucaramanga.com</p>
+          <p class="text-sm text-[hsl(210_15%_45%)]">
+            Respuesta en 24–48 horas
           </p>
         </div>
 
         <div
-          class="p-6 text-white rounded-lg"
-          style="background: linear-gradient(135deg, hsl(145 60% 45%), hsl(145 60% 55%)); box-shadow: 0 10px 30px -5px hsl(210 20% 20% / 0.12);"
+          class="p-6 rounded-lg text-white"
+          style="background: linear-gradient(135deg, hsl(145 60% 45%), hsl(145 60% 55%));"
         >
-          <h3 class="font-semibold text-lg mb-2">¿Necesitas atención urgente?</h3>
-          <p class="text-white/90 mb-4">
-            Contáctanos por WhatsApp para una respuesta inmediata
-          </p>
+          <h3 class="font-semibold mb-2">¿Necesitas atención urgente?</h3>
+          <p class="mb-4">Contáctanos por WhatsApp para una respuesta inmediata</p>
           <button
             id="urgentButton"
             type="button"
-            class="w-full bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm font-medium py-2 rounded-md transition-all"
+            class="w-full bg-white/10 hover:bg-white/20 border border-white/30 py-2 rounded-md transition"
           >
-            Contactar Ahora
+            Contactar ahora
           </button>
         </div>
-      </div>
+
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- Script cliente -->
 <script is:client>
   const phoneNumber = "573017205354";
 
-  // Botón de atención urgente
-  const urgentBtn = document.getElementById("urgentButton");
-  urgentBtn?.addEventListener("click", () => {
-    const msg = encodeURIComponent("Necesito atención urgente de enfermería a domicilio");
-    window.open(`https://wa.me/${phoneNumber}?text=${msg}`, "_blank");
+  document.getElementById("urgentButton")?.addEventListener("click", () => {
+    window.open(`https://wa.me/${phoneNumber}?text=Necesito atención urgente de enfermería a domicilio`, "_blank");
   });
 
-  // Formulario principal
-  const form = document.getElementById("contactForm");
-  form?.addEventListener("submit", (e) => {
+  document.getElementById("contactForm")?.addEventListener("submit", (e) => {
     e.preventDefault();
-    const data = new FormData(form);
-    const name = data.get("name")?.toString().trim();
-    const phone = data.get("phone")?.toString().trim();
-    const city = data.get("city")?.toString();
-    const service = data.get("service")?.toString();
-    const message = data.get("message")?.toString().trim() || "N/A";
-
-    if (!name || !phone || !city || !service) {
-      alert("Por favor completa todos los campos obligatorios.");
-      return;
-    }
-
+    const data = new FormData(e.target);
     const text = encodeURIComponent(
-      `Hola, mi nombre es ${name}\n` +
-      `Teléfono: ${phone}\n` +
-      `Ciudad: ${city}\n` +
-      `Servicio: ${service}\n` +
-      `Mensaje: ${message}`
+      `Hola, mi nombre es ${data.get("name")}\n` +
+      `Teléfono: ${data.get("phone")}\n` +
+      `Ciudad: ${data.get("city")}\n` +
+      `Servicio: ${data.get("service")}\n` +
+      `Mensaje: ${data.get("message") || "N/A"}`
     );
-
     window.open(`https://wa.me/${phoneNumber}?text=${text}`, "_blank");
   });
 </script>
-
-<style>
-  @keyframes fade-in {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .animate-fade-in {
-    animation: fade-in 0.6s ease-out forwards;
-  }
-</style>

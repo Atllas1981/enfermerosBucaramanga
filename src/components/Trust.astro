@@ -1,47 +1,59 @@
----
-// Sin imports de React ni Lucide
----
-
-<section class="py-20" style="background: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 30% 98%) 100%);">
+<section
+  class="py-20"
+  aria-labelledby="seguridad-enfermeria-domiciliaria"
+  style="background: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 30% 98%) 100%);"
+>
   <div class="container mx-auto px-4">
-    <div class="text-center mb-12 animate-fade-in">
-      <h2 class="text-3xl md:text-4xl font-bold text-[hsl(210_20%_20%)] mb-4">
+
+    <!-- Título principal -->
+    <header class="text-center mb-14">
+      <h2
+        id="seguridad-enfermeria-domiciliaria"
+        class="text-3xl md:text-4xl font-bold text-[hsl(210_20%_20%)]"
+      >
         Tu Seguridad es Nuestra Responsabilidad
       </h2>
-    </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
-      <!-- Badge 1: Legal & Certificado -->
-      <div
-        class="p-6 text-center hover:shadow-[0_10px_30px_-5px_hsl(210_20%_20%_/_0.12)] transition-all duration-300 hover:-translate-y-1 animate-scale-in border-[hsl(210_20%_90%)]"
-        style="animation-delay: 0ms;"
-      >
+      <!-- Refuerzo SEO no visible -->
+      <p class="sr-only">
+        Servicios de enfermería domiciliaria en Bucaramanga con personal certificado,
+        cumplimiento de protocolos del Ministerio de Salud y atención ética y transparente.
+      </p>
+    </header>
+
+    <!-- Sellos de confianza -->
+    <div
+      class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto mb-14 text-center"
+      role="list"
+    >
+      <!-- Legal -->
+      <div role="listitem">
         <div class="inline-flex h-14 w-14 rounded-full bg-[hsl(205_65%_35%_/_0.1)] items-center justify-center mb-4">
-          <!-- Shield Icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7 text-[hsl(205_65%_35%)]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="text-[hsl(205_65%_35%)]">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
           </svg>
         </div>
-        <h3 class="font-semibold text-[hsl(210_20%_20%)] mb-1">
-          Legal & Certificado
+        <h3 class="font-semibold text-[hsl(210_20%_20%)]">
+          Legal y Certificado
         </h3>
         <p class="text-sm text-[hsl(210_15%_45%)]">
           Tarjeta profesional vigente
         </p>
       </div>
 
-      <!-- Badge 2: Soporte Vital -->
-      <div
-        class="p-6 text-center hover:shadow-[0_10px_30px_-5px_hsl(210_20%_20%_/_0.12)] transition-all duration-300 hover:-translate-y-1 animate-scale-in border-[hsl(210_20%_90%)]"
-        style="animation-delay: 100ms;"
-      >
+      <!-- Soporte vital -->
+      <div role="listitem">
         <div class="inline-flex h-14 w-14 rounded-full bg-[hsl(205_65%_35%_/_0.1)] items-center justify-center mb-4">
-          <!-- Award Icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7 text-[hsl(205_65%_35%)]">
-            <circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="text-[hsl(205_65%_35%)]">
+            <circle cx="12" cy="8" r="7"/>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
           </svg>
         </div>
-        <h3 class="font-semibold text-[hsl(210_20%_20%)] mb-1">
+        <h3 class="font-semibold text-[hsl(210_20%_20%)]">
           Soporte Vital
         </h3>
         <p class="text-sm text-[hsl(210_15%_45%)]">
@@ -49,18 +61,18 @@
         </p>
       </div>
 
-      <!-- Badge 3: Protocolos MinSalud -->
-      <div
-        class="p-6 text-center hover:shadow-[0_10px_30px_-5px_hsl(210_20%_20%_/_0.12)] transition-all duration-300 hover:-translate-y-1 animate-scale-in border-[hsl(210_20%_90%)]"
-        style="animation-delay: 200ms;"
-      >
+      <!-- Protocolos -->
+      <div role="listitem">
         <div class="inline-flex h-14 w-14 rounded-full bg-[hsl(205_65%_35%_/_0.1)] items-center justify-center mb-4">
-          <!-- FileCheck Icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7 text-[hsl(205_65%_35%)]">
-            <path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13h5"/><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m9 15 2 2 4-4"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="text-[hsl(205_65%_35%)]">
+            <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+            <path d="m9 15 2 2 4-4"/>
+            <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5"/>
           </svg>
         </div>
-        <h3 class="font-semibold text-[hsl(210_20%_20%)] mb-1">
+        <h3 class="font-semibold text-[hsl(210_20%_20%)]">
           Protocolos MinSalud
         </h3>
         <p class="text-sm text-[hsl(210_15%_45%)]">
@@ -68,18 +80,17 @@
         </p>
       </div>
 
-      <!-- Badge 4: Transparencia Total -->
-      <div
-        class="p-6 text-center hover:shadow-[0_10px_30px_-5px_hsl(210_20%_20%_/_0.12)] transition-all duration-300 hover:-translate-y-1 animate-scale-in border-[hsl(210_20%_90%)]"
-        style="animation-delay: 300ms;"
-      >
+      <!-- Transparencia -->
+      <div role="listitem">
         <div class="inline-flex h-14 w-14 rounded-full bg-[hsl(205_65%_35%_/_0.1)] items-center justify-center mb-4">
-          <!-- Phone Icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7 text-[hsl(205_65%_35%)]">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="text-[hsl(205_65%_35%)]">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2"/>
+            <path d="M3 5a2 2 0 0 1 2.11-2"/>
           </svg>
         </div>
-        <h3 class="font-semibold text-[hsl(210_20%_20%)] mb-1">
+        <h3 class="font-semibold text-[hsl(210_20%_20%)]">
           Transparencia Total
         </h3>
         <p class="text-sm text-[hsl(210_15%_45%)]">
@@ -88,66 +99,63 @@
       </div>
     </div>
 
-    <!-- Lista de compromisos -->
+    <!-- Compromisos -->
     <div class="max-w-4xl mx-auto">
-      <div class="p-8 bg-[hsl(0_0%_100%)] border-[hsl(210_20%_90%)] shadow-[0_4px_20px_-2px_hsl(210_20%_20%_/_0.08)]">
+      <div class="p-8 bg-white shadow-[0_4px_20px_-2px_hsl(210_20%_20%_/_0.08)] rounded-lg">
         <ul class="space-y-4">
-          <!-- Item 1 -->
-          <li class="flex items-start gap-3">
-            <div class="h-6 w-6 rounded-full bg-[hsl(145_60%_45%_/_0.1)] flex items-center justify-center flex-shrink-0 mt-0.5">
-              <div class="h-2 w-2 rounded-full bg-[hsl(145_60%_45%)]"></div>
-            </div>
-            <p class="text-[hsl(210_15%_45%)] leading-relaxed">
-              <span class="font-semibold text-[hsl(210_20%_20%)]">Todos nuestros profesionales</span> cuentan con tarjeta profesional de enfermería vigente y certificación en soporte vital.
+          <li class="flex gap-3">
+            <span class="mt-1 h-2 w-2 rounded-full bg-[hsl(145_60%_45%)]"></span>
+            <p class="text-[hsl(210_15%_45%)]">
+              <strong class="text-[hsl(210_20%_20%)]">Todos nuestros profesionales</strong>
+              cuentan con tarjeta profesional de enfermería vigente y certificación en soporte vital.
             </p>
           </li>
-          <!-- Item 2 -->
-          <li class="flex items-start gap-3">
-            <div class="h-6 w-6 rounded-full bg-[hsl(145_60%_45%_/_0.1)] flex items-center justify-center flex-shrink-0 mt-0.5">
-              <div class="h-2 w-2 rounded-full bg-[hsl(145_60%_45%)]"></div>
-            </div>
-            <p class="text-[hsl(210_15%_45%)] leading-relaxed">
-              <span class="font-semibold text-[hsl(210_20%_20%)]">Cumplimos con los protocolos</span> del Ministerio de Salud de Colombia para atención domiciliaria.
+
+          <li class="flex gap-3">
+            <span class="mt-1 h-2 w-2 rounded-full bg-[hsl(145_60%_45%)]"></span>
+            <p class="text-[hsl(210_15%_45%)]">
+              <strong class="text-[hsl(210_20%_20%)]">Cumplimos con los protocolos</strong>
+              del Ministerio de Salud de Colombia para atención domiciliaria.
             </p>
           </li>
-          <!-- Item 3 -->
-          <li class="flex items-start gap-3">
-            <div class="h-6 w-6 rounded-full bg-[hsl(145_60%_45%_/_0.1)] flex items-center justify-center flex-shrink-0 mt-0.5">
-              <div class="h-2 w-2 rounded-full bg-[hsl(145_60%_45%)]"></div>
-            </div>
-            <p class="text-[hsl(210_15%_45%)] leading-relaxed">
-              <span class="font-semibold text-[hsl(210_20%_20%)]">Cada servicio incluye</span> registro clínico básico y comunicación constante con tu médico tratante (si aplica).
+
+          <li class="flex gap-3">
+            <span class="mt-1 h-2 w-2 rounded-full bg-[hsl(145_60%_45%)]"></span>
+            <p class="text-[hsl(210_15%_45%)]">
+              <strong class="text-[hsl(210_20%_20%)]">Cada servicio incluye</strong>
+              registro clínico básico y comunicación responsable con el entorno médico.
             </p>
           </li>
-          <!-- Item 4 -->
-          <li class="flex items-start gap-3">
-            <div class="h-6 w-6 rounded-full bg-[hsl(145_60%_45%_/_0.1)] flex items-center justify-center flex-shrink-0 mt-0.5">
-              <div class="h-2 w-2 rounded-full bg-[hsl(145_60%_45%)]"></div>
-            </div>
-            <p class="text-[hsl(210_15%_45%)] leading-relaxed">
-              <span class="font-semibold text-[hsl(210_20%_20%)]">Transparencia total:</span> sin contratos ocultos, sin cargos sorpresa.
+
+          <li class="flex gap-3">
+            <span class="mt-1 h-2 w-2 rounded-full bg-[hsl(145_60%_45%)]"></span>
+            <p class="text-[hsl(210_15%_45%)]">
+              <strong class="text-[hsl(210_20%_20%)]">Transparencia total:</strong>
+              sin contratos ocultos ni cargos sorpresa.
             </p>
           </li>
         </ul>
       </div>
     </div>
+
   </div>
 </section>
 
+
 <style>
-  @keyframes fade-in {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes scale-in {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-  }
-  .animate-fade-in {
-    animation: fade-in 0.6s ease-out forwards;
-  }
-  .animate-scale-in {
-    animation: scale-in 0.5s ease-out forwards;
-    opacity: 0;
-  }
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out forwards;
+  opacity: 0;
+}
 </style>
