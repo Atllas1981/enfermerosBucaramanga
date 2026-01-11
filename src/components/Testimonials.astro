@@ -1,34 +1,42 @@
 ---
+const BASE_URL = import.meta.env.BASE_URL;
+
 const testimonials = [
   {
     text: "Gracias a su enfermera, mi recuperación tras la lipo fue tranquila y sin complicaciones. ¡Totalmente recomendado!",
     name: "Ana M.",
-    location: "Girón"
+    location: "Girón",
+    avatar: "testimonials/ana-m.webp"
   },
   {
     text: "Como familiar de un adulto mayor, me da tranquilidad saber que está en manos profesionales y humanas.",
     name: "Carlos R.",
-    location: "Floridablanca"
+    location: "Floridablanca",
+    avatar: "testimonials/carlos-r.webp"
   },
   {
     text: "Excelente servicio y muy económico comparado con otras opciones. La enfermera fue muy atenta y profesional.",
     name: "María P.",
-    location: "Bucaramanga"
+    location: "Bucaramanga",
+    avatar: "testimonials/maria-p.webp"
   },
   {
-    text: "Me ayudaron con las curaciones postquirúrgicas en casa, con mucha paciencia y respeto. El precio fue justo y el trato, impecable.",
+    text: "Me ayudaron con las curaciones postquirúrgicas en casa, con mucha paciencia y respeto.",
     name: "Luis F.",
-    location: "Piedecuesta"
+    location: "Piedecuesta",
+    avatar: "testimonials/luis-f.webp"
   },
   {
-    text: "Contraté el servicio de diálisis peritoneal y quedé impresionado por la puntualidad, la limpieza y la calidez humana.",
+    text: "Contraté el servicio de diálisis peritoneal y quedé impresionado por la puntualidad.",
     name: "Elena G.",
-    location: "Bucaramanga"
+    location: "Bucaramanga",
+    avatar: "testimonials/elena-g.webp"
   },
   {
-    text: "Encontré un servicio honesto, humano y profesional. Mi mamá recibió sus curaciones con tanto respeto que hasta sonreía.",
+    text: "Encontré un servicio honesto, humano y profesional.",
     name: "Jorge D.",
-    location: "Lebrija"
+    location: "Girón",
+    avatar: "testimonials/jorge-d.webp"
   }
 ];
 ---
@@ -36,6 +44,7 @@ const testimonials = [
 <section class="py-4 bg-white" aria-labelledby="testimonials-heading">
   <div class="container mx-auto px-4">
 
+    <!-- Header -->
     <header class="text-center mb-12 animate-fade-in">
       <h2
         id="testimonials-heading"
@@ -55,22 +64,27 @@ const testimonials = [
         class="flex gap-6 pb-8 overflow-x-auto scrollbar-hide -mx-2 px-2 scroll-smooth"
       >
         {testimonials.map((t) => (
-          <figure class="w-80 shrink-0 p-6 border border-[hsl(210_20%_90%)] rounded-xl bg-white shadow-sm relative">
+          <figure class="w-80 shrink-0 p-6 border border-[hsl(210_20%_90%)] rounded-xl bg-white shadow-sm">
 
-            <span class="sr-only">
-              Testimonio de paciente de enfermería domiciliaria en {t.location}
-            </span>
+            <header class="flex items-center gap-3 mb-4">
+              <img
+                src={`${BASE_URL}${t.avatar}`}
+                alt={`Foto de ${t.name}`}
+                class="w-12 h-12 rounded-full object-cover"
+                loading="lazy"
+              />
+              <div>
+                <p class="font-semibold text-[hsl(210_20%_20%)]">{t.name}</p>
+                <p class="text-sm text-[hsl(210_15%_45%)]">{t.location}</p>
+              </div>
+            </header>
 
-            <blockquote class="relative z-10">
-              <p class="text-[hsl(210_15%_45%)] italic mb-4">
+            <blockquote>
+              <p class="italic text-[hsl(210_15%_45%)]">
                 “{t.text}”
               </p>
             </blockquote>
 
-            <figcaption class="border-t border-[hsl(210_20%_90%)] pt-4">
-              <p class="font-semibold text-[hsl(210_20%_20%)]">{t.name}</p>
-              <p class="text-sm text-[hsl(210_15%_45%)]">{t.location}</p>
-            </figcaption>
           </figure>
         ))}
       </div>
@@ -80,23 +94,28 @@ const testimonials = [
     <div class="hidden md:grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       {testimonials.map((t, i) => (
         <figure
-          class="p-6 border border-[hsl(210_20%_90%)] animate-slide-up"
+          class="p-6 border border-[hsl(210_20%_90%)] rounded-xl bg-white animate-slide-up"
           style={`animation-delay:${i * 100}ms`}
         >
-          <span class="sr-only">
-            Opinión de paciente sobre enfermería a domicilio en {t.location}
-          </span>
+          <header class="flex items-center gap-3 mb-4">
+            <img
+              src={`${BASE_URL}${t.avatar}`}
+              alt={`Foto de ${t.name}`}
+              class="w-12 h-12 rounded-full object-cover"
+              loading="lazy"
+            />
+            <div>
+              <p class="font-semibold text-[hsl(210_20%_20%)]">{t.name}</p>
+              <p class="text-sm text-[hsl(210_15%_45%)]">{t.location}</p>
+            </div>
+          </header>
 
           <blockquote>
-            <p class="italic text-[hsl(210_15%_45%)] mb-4">
+            <p class="italic text-[hsl(210_15%_45%)]">
               “{t.text}”
             </p>
           </blockquote>
 
-          <figcaption class="border-t pt-4">
-            <p class="font-semibold">{t.name}</p>
-            <p class="text-sm text-[hsl(210_15%_45%)]">{t.location}</p>
-          </figcaption>
         </figure>
       ))}
     </div>
@@ -133,6 +152,10 @@ const testimonials = [
 </script>
 
 <style>
-.scrollbar-hide::-webkit-scrollbar { display: none; }
-.scrollbar-hide { scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  scrollbar-width: none;
+}
 </style>
