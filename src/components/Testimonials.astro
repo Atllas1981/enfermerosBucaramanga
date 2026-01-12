@@ -39,6 +39,11 @@ const testimonials = [
     avatar: "testimonials/jorge-d.webp"
   }
 ];
+
+// contadores fake solo visuales
+function random(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 ---
 
 <section class="py-4 bg-white" aria-labelledby="testimonials-heading">
@@ -63,61 +68,156 @@ const testimonials = [
         id="testimonials-track"
         class="flex gap-6 pb-8 overflow-x-auto scrollbar-hide -mx-2 px-2 scroll-smooth"
       >
-        {testimonials.map((t) => (
-          <figure class="w-80 shrink-0 p-6 border border-[hsl(210_20%_90%)] rounded-xl bg-white shadow-sm">
+        {testimonials.map((t) => {
+          const likes = random(20, 180);
+          const comments = random(3, 40);
+          const shares = random(1, 20);
 
-            <header class="flex items-center gap-3 mb-4">
-              <img
-                src={`${BASE_URL}${t.avatar}`}
-                alt={`Foto de ${t.name}`}
-                class="w-12 h-12 rounded-full object-cover"
-                loading="lazy"
-              />
-              <div>
-                <p class="font-semibold text-[hsl(210_20%_20%)]">{t.name}</p>
-                <p class="text-sm text-[hsl(210_15%_45%)]">{t.location}</p>
-              </div>
-            </header>
+          return (
+            <figure class="w-80 shrink-0 bg-white rounded-2xl border border-[hsl(210_20%_90%)] shadow-sm hover:shadow-md transition overflow-hidden">
 
-            <blockquote>
-              <p class="italic text-[hsl(210_15%_45%)]">
-                “{t.text}”
-              </p>
-            </blockquote>
+              <!-- Header -->
+              <header class="flex items-center gap-3 p-5">
+                <img
+                  src={`${BASE_URL}${t.avatar}`}
+                  alt={`Foto de ${t.name}`}
+                  class="w-12 h-12 rounded-full object-cover ring-2 ring-white shadow"
+                  loading="lazy"
+                />
+                <div>
+                  <p class="font-semibold text-[hsl(210_20%_20%)] leading-tight">
+                    {t.name}
+                  </p>
+                  <p class="text-xs text-[hsl(210_15%_45%)]">
+                    {t.location} · Hace 2 días
+                  </p>
+                </div>
+              </header>
 
-          </figure>
-        ))}
+              <!-- Texto -->
+              <blockquote class="px-5 pb-4">
+                <p class="text-sm leading-relaxed text-[hsl(210_15%_40%)]">
+                  {t.text}
+                </p>
+              </blockquote>
+
+              <!-- Barra Social -->
+              <footer class="bg-[hsl(210_20%_98%)] border-t border-[hsl(210_20%_90%)]">
+
+                <!-- Contadores -->
+<div class="flex items-center justify-between px-5 py-2 text-xs text-[hsl(210_15%_45%)]">
+  <div class="flex items-center gap-2">
+    <span class="reaction-bubble">
+      <img src={`${BASE_URL}icon/reaction.svg`} alt="Reacción" class="w-full h-full object-cover" />
+    </span>
+    <span>{likes}</span>
+  </div>
+  <div class="flex gap-3">
+    <span>{comments} comentarios</span>
+    <span>{shares} compartidos</span>
+  </div>
+</div>
+
+<!-- Acciones -->
+<div class="grid grid-cols-3 border-t border-[hsl(210_20%_90%)]">
+  <button class="social-btn flex items-center justify-center gap-1">
+    <img src={`${BASE_URL}icon/like.svg`} alt="Me gusta" class="w-4 h-4" />
+    Me gusta
+  </button>
+  <button class="social-btn flex items-center justify-center gap-1">
+    <img src={`${BASE_URL}icon/comment.svg`} alt="Comentar" class="w-4 h-4" />
+    Comentar
+  </button>
+  <button class="social-btn flex items-center justify-center gap-1">
+    <img src={`${BASE_URL}icon/share.svg`} alt="Compartir" class="w-4 h-4" />
+    Compartir
+  </button>
+</div>
+
+              </footer>
+
+            </figure>
+          );
+        })}
       </div>
     </div>
 
     <!-- Grid desktop -->
     <div class="hidden md:grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      {testimonials.map((t, i) => (
-        <figure
-          class="p-6 border border-[hsl(210_20%_90%)] rounded-xl bg-white animate-slide-up"
-          style={`animation-delay:${i * 100}ms`}
-        >
-          <header class="flex items-center gap-3 mb-4">
-            <img
-              src={`${BASE_URL}${t.avatar}`}
-              alt={`Foto de ${t.name}`}
-              class="w-12 h-12 rounded-full object-cover"
-              loading="lazy"
-            />
-            <div>
-              <p class="font-semibold text-[hsl(210_20%_20%)]">{t.name}</p>
-              <p class="text-sm text-[hsl(210_15%_45%)]">{t.location}</p>
-            </div>
-          </header>
+      {testimonials.map((t, i) => {
+        const likes = random(20, 180);
+        const comments = random(3, 40);
+        const shares = random(1, 20);
 
-          <blockquote>
-            <p class="italic text-[hsl(210_15%_45%)]">
-              “{t.text}”
-            </p>
-          </blockquote>
+        return (
+          <figure
+            class="bg-white rounded-2xl border border-[hsl(210_20%_90%)] shadow-sm hover:shadow-lg transition overflow-hidden animate-slide-up"
+            style={`animation-delay:${i * 100}ms`}
+          >
 
-        </figure>
-      ))}
+            <!-- Header -->
+            <header class="flex items-center gap-3 p-5">
+              <img
+                src={`${BASE_URL}${t.avatar}`}
+                alt={`Foto de ${t.name}`}
+                class="w-12 h-12 rounded-full object-cover ring-2 ring-white shadow"
+                loading="lazy"
+              />
+              <div>
+                <p class="font-semibold text-[hsl(210_20%_20%)] leading-tight">
+                  {t.name}
+                </p>
+                <p class="text-xs text-[hsl(210_15%_45%)]">
+                  {t.location} · Hace 3 días
+                </p>
+              </div>
+            </header>
+
+            <!-- Texto -->
+            <blockquote class="px-5 pb-4">
+              <p class="text-sm leading-relaxed text-[hsl(210_15%_40%)]">
+                {t.text}
+              </p>
+            </blockquote>
+
+            <!-- Barra Social -->
+            <footer class="bg-[hsl(210_20%_98%)] border-t border-[hsl(210_20%_90%)]">
+
+              <!-- Contadores -->
+<div class="flex items-center justify-between px-5 py-2 text-xs text-[hsl(210_15%_45%)]">
+  <div class="flex items-center gap-2">
+    <span class="reaction-bubble">
+      <img src={`${BASE_URL}icon/reaction.svg`} alt="Reacción" class="w-full h-full object-cover" />
+    </span>
+    <span>{likes}</span>
+  </div>
+  <div class="flex gap-3">
+    <span>{comments} comentarios</span>
+    <span>{shares} compartidos</span>
+  </div>
+</div>
+
+<!-- Acciones -->
+<div class="grid grid-cols-3 border-t border-[hsl(210_20%_90%)]">
+  <button class="social-btn flex items-center justify-center gap-1">
+    <img src={`${BASE_URL}icon/like.svg`} alt="Me gusta" class="w-4 h-4" />
+    Me gusta
+  </button>
+  <button class="social-btn flex items-center justify-center gap-1">
+    <img src={`${BASE_URL}icon/comment.svg`} alt="Comentar" class="w-4 h-4" />
+    Comentar
+  </button>
+  <button class="social-btn flex items-center justify-center gap-1">
+    <img src={`${BASE_URL}icon/share.svg`} alt="Compartir" class="w-4 h-4" />
+    Compartir
+  </button>
+</div>
+
+            </footer>
+
+          </figure>
+        );
+      })}
     </div>
 
   </div>
@@ -157,5 +257,48 @@ const testimonials = [
 }
 .scrollbar-hide {
   scrollbar-width: none;
+}
+
+/* Burbuja reacción */
+.reaction-bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 20px;
+  border-radius: 999px;
+  background: #1877f2;
+  box-shadow: 0 2px 4px rgba(0,0,0,.15);
+  overflow: hidden;
+}
+
+.reaction-bubble img {
+  display: block;
+}
+
+/* Botones sociales */
+.social-btn {
+  padding: 10px 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: hsl(210 15% 35%);
+  transition: all .2s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.social-btn:hover {
+  background: hsl(210 20% 94%);
+  color: #1877f2;
+}
+
+.social-btn img {
+  filter: grayscale(100%) opacity(0.7);
+  transition: filter 0.2s ease;
+}
+
+.social-btn:hover img {
+  filter: grayscale(0%) opacity(1);
 }
 </style>
