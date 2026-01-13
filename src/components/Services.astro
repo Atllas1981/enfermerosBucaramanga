@@ -74,7 +74,7 @@ const services = [
 >
   <div class="container mx-auto px-4">
 
-    <!-- Encabezado SEO correcto -->
+    <!-- Encabezado -->
     <div class="text-center mb-12">
       <h2
         id="servicios-title"
@@ -87,27 +87,27 @@ const services = [
       </p>
     </div>
 
-    <!-- Carrusel solo en móvil -->
-    <div class="md:hidden px-2">
+    <!-- Carrusel responsive -->
+    <div class="px-2">
       <div
         id="carousel-track"
-        class="flex gap-6 pb-8 overflow-x-auto scrollbar-hide -mx-2 px-2"
+        class="flex gap-6 pb-8 overflow-x-auto scrollbar-hide scroll-smooth -mx-2 px-2"
       >
         {services.map((s) => (
           <a
             href={`/enfermerosBucaramanga/services/${s.slug}`}
             aria-label={`Ver servicio de ${s.title} en Bucaramanga`}
-            class="block w-80 shrink-0"
+            class="block w-[85%] sm:w-[60%] md:w-[45%] lg:w-[30%] shrink-0"
             itemScope
             itemType="https://schema.org/Service"
           >
-            <div class="p-5 border border-[hsl(210_20%_90%)] rounded-xl h-full bg-white shadow-sm hover:shadow-md transition">
+            <div class="p-5 border border-[hsl(210_20%_90%)] rounded-xl h-full bg-white shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
               <img
                 src={import.meta.env.BASE_URL + `img/services/${s.img}`}
                 alt={s.alt}
                 loading="lazy"
                 itemProp="image"
-                class={`w-full h-40 object-cover rounded-lg mb-3 ${s.objectPosition || 'object-cover'}`}
+                class={`w-full h-48 object-cover rounded-lg mb-3 ${s.objectPosition || 'object-cover'}`}
               />
               <h3
                 class="font-semibold text-lg text-[hsl(210_20%_20%)]"
@@ -116,7 +116,7 @@ const services = [
                 {s.title}
               </h3>
               <p
-                class="text-[hsl(210_15%_45%)] text-sm mt-1"
+                class="text-[hsl(210_15%_45%)] text-sm mt-1 leading-relaxed"
                 itemProp="description"
               >
                 {s.desc}
@@ -127,58 +127,21 @@ const services = [
       </div>
 
       <!-- Indicadores -->
-      <div class="flex flex-col items-center gap-3 mt-4">
+      <div class="flex justify-center mt-4">
         <div id="indicators" class="flex gap-2"></div>
       </div>
     </div>
 
-    <!-- Grid tablet / desktop -->
-    <div class="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-8">
-      {services.map((s) => (
-        <a
-          href={`/enfermerosBucaramanga/services/${s.slug}`}
-          aria-label={`Ver servicio de ${s.title} en Bucaramanga`}
-          class="block"
-          itemScope
-          itemType="https://schema.org/Service"
-        >
-          <div class="p-6 border border-[hsl(210_20%_90%)] rounded-xl h-full bg-white hover:shadow-[0_10px_30px_-5px_hsl(210_20%_20%_/_0.12)] transition-all duration-300 hover:-translate-y-1">
-            <img
-              src={import.meta.env.BASE_URL + `img/services/${s.img}`}
-              alt={s.alt}
-              loading="lazy"
-              itemProp="image"
-              class={`w-full h-48 object-cover rounded-lg mb-4 shadow-[0_4px_20px_-2px_hsl(210_20%_20%_/_0.08)] ${s.objectPosition || 'object-cover'}`}
-            />
-            <h3
-              class="font-semibold text-lg text-[hsl(210_20%_20%)] mb-2"
-              itemProp="name"
-            >
-              {s.title}
-            </h3>
-            <p
-              class="text-[hsl(210_15%_45%)] leading-relaxed"
-              itemProp="description"
-            >
-              {s.desc}
-            </p>
-          </div>
-        </a>
-      ))}
-    </div>
-
     <!-- Tarjeta contacto -->
-    <div class="text-center">
-      <div class="inline-block p-6 bg-[hsl(30_15%_95%)] border-[hsl(210_20%_90%)] rounded-xl">
-        <div class="flex items-center gap-3 flex-wrap justify-center">
-          <p class="text-[hsl(210_15%_45%)]">
-            ¿Necesitas un servicio no listado?
-            <span class="font-semibold text-[hsl(210_20%_20%)]">
-              Contáctanos.
-            </span>
-            Nos adaptamos a tu caso.
-          </p>
-        </div>
+    <div class="text-center mt-12">
+      <div class="inline-block p-6 bg-[hsl(30_15%_95%)] border border-[hsl(210_20%_90%)] rounded-xl">
+        <p class="text-[hsl(210_15%_45%)]">
+          ¿Necesitas un servicio no listado?
+          <span class="font-semibold text-[hsl(210_20%_20%)]">
+            Contáctanos.
+          </span>
+          Nos adaptamos a tu caso.
+        </p>
       </div>
     </div>
 
@@ -186,46 +149,49 @@ const services = [
 </section>
 
 <script is:client>
-if (typeof window !== 'undefined' && window.innerWidth < 768) {
-  const init = () => {
-    const track = document.getElementById('carousel-track');
-    const dotsContainer = document.getElementById('indicators');
-    if (!track || !dotsContainer) return;
+const initCarousel = () => {
+  const track = document.getElementById('carousel-track');
+  const dotsContainer = document.getElementById('indicators');
+  if (!track || !dotsContainer) return;
 
-    const cards = Array.from(track.children);
-    let index = 0;
+  const cards = Array.from(track.children);
+  let index = 0;
 
-    cards.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.setAttribute('aria-label', `Ir al servicio ${i + 1}`);
-      dot.className = 'w-2 h-2 rounded-full bg-gray-300';
-      dot.addEventListener('click', () => goToSlide(i));
-      dotsContainer.appendChild(dot);
+  dotsContainer.innerHTML = '';
+
+  cards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.setAttribute('aria-label', `Ir al servicio ${i + 1}`);
+    dot.className = 'w-2 h-2 rounded-full bg-gray-300';
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const updateDots = () => {
+    dotsContainer.querySelectorAll('button').forEach((dot, i) => {
+      dot.className =
+        i === index
+          ? 'w-2 h-2 rounded-full bg-[hsl(210_100%_50%)]'
+          : 'w-2 h-2 rounded-full bg-gray-300';
     });
-
-    const updateDots = () => {
-      dotsContainer.querySelectorAll('button').forEach((dot, i) => {
-        dot.className =
-          i === index
-            ? 'w-2 h-2 rounded-full bg-[hsl(210_100%_50%)]'
-            : 'w-2 h-2 rounded-full bg-gray-300';
-      });
-    };
-
-    const goToSlide = (i) => {
-      index = (i + cards.length) % cards.length;
-      track.scrollTo({ left: cards[index].offsetLeft, behavior: 'smooth' });
-      updateDots();
-    };
-
-    updateDots();
-    setInterval(() => goToSlide(index + 1), 4000);
   };
 
-  document.readyState === 'loading'
-    ? document.addEventListener('DOMContentLoaded', init)
-    : init();
-}
+  const goToSlide = (i) => {
+    index = (i + cards.length) % cards.length;
+    track.scrollTo({
+      left: cards[index].offsetLeft,
+      behavior: 'smooth'
+    });
+    updateDots();
+  };
+
+  updateDots();
+  setInterval(() => goToSlide(index + 1), 4000);
+};
+
+document.readyState === 'loading'
+  ? document.addEventListener('DOMContentLoaded', initCarousel)
+  : initCarousel();
 </script>
 
 <style>
