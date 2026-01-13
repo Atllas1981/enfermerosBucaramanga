@@ -7,37 +7,41 @@ interface Props {
   image?: string; // OG image
 }
 
-// Valores por defecto (para la Home)
+// Valores por defecto (Home)
 const {
-  title = "Enfermeros Bucaramanga | Servicios Profesionales de Enfermería",
-  description = "Cuidado de salud a domicilio con enfermeros profesionales en Bucaramanga y área metropolitana.",
-  image = "/og/default.jpg", 
+  title = "Enfermeros en Bucaramanga | Atención Domiciliaria",
+  description = "Enfermeros profesionales en Bucaramanga. Atención domiciliaria, curaciones, inyecciones y cuidado del paciente.",
+  image = "/og/default.jpg",
 } = Astro.props;
 
-// URL del despliegue en GitHub Pages
+// URL base (GitHub Pages)
 const siteUrl = "https://atllas1981.github.io/enfermerosBucaramanga";
 
-// Construcción de la URL absoluta de la imagen OG
+// URL absoluta para OG
 const absoluteImage = image.startsWith("http")
   ? image
   : `${siteUrl}${image}`;
+
+// URL absoluta de la página
+const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
 ---
 
 <!doctype html>
-<html lang="es-co">
+<html lang="es-CO">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- SEO Básico -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
 
-    <!-- OpenGraph (Facebook / WhatsApp / LinkedIn) -->
+    <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={absoluteImage} />
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_CO" />
 
@@ -47,13 +51,17 @@ const absoluteImage = image.startsWith("http")
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={absoluteImage} />
 
-    <!-- Icono -->
+    <!-- Favicon -->
+    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+
+    <!-- Apple Touch Icon -->
     <link
-      rel="icon"
-      type="image/svg+xml"
-      href={`${import.meta.env.BASE_URL}favicon.svg`}
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href={`${import.meta.env.BASE_URL}apple-touch-icon.png`}
     />
 
+    <!-- Metadata -->
     <meta name="generator" content={Astro.generator} />
   </head>
 
