@@ -59,6 +59,7 @@ const message = encodeURIComponent("Hola, necesito solicitar una enfermera a dom
   class="bg-[hsl(145_60%_45%)] hover:bg-[hsl(145_60%_55%)] text-white font-semibold px-8 py-6 text-lg shadow-[0_10px_30px_-5px_hsl(210_20%_20%_/_0.12)] hover:shadow-[0_20px_40px_-10px_hsl(210_20%_20%_/_0.15)] transition-all duration-300 hover:scale-105 w-full sm:w-auto text-center inline-block rounded-md"
 >
   <svg
+    aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 32 32"
     class="inline mr-2 h-5 w-5"
@@ -75,7 +76,9 @@ const message = encodeURIComponent("Hola, necesito solicitar una enfermera a dom
           onclick="document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' });"
         >
           <!-- Heart Icon SVG -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline mr-2 h-5 w-5">
+          <svg 
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline mr-2 h-5 w-5">
             <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/>
           </svg>
           Conocer Servicios
