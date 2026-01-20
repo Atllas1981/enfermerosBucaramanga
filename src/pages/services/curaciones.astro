@@ -1,0 +1,49 @@
+---
+import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
+import Footer from "../../components/Footer.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const title = "Curaciones a Domicilio en Bucaramanga";
+const subtitle =
+  "Enfermería Profesional y Segura para el Cuidado de tus Heridas";
+const description =
+  "Las curaciones domiciliarias son procedimientos esenciales y casos complejos para la correcta cicatrización de heridas quirúrgicas, úlceras, quemaduras y lesiones cutáneas. Nuestros enfermeros profesionales realizan el cambio de apósitos, limpieza de heridas y seguimiento de la evolución con técnicas estériles y protocolos actualizados del Ministerio de Salud de Colombia.";
+
+const ogImage = "/og/curaciones.jpg";
+
+const benefits = [
+  "Evaluación completa de la herida y registro fotográfico de evolución",
+  "Limpieza con técnica aséptica y materiales estériles certificados",
+  "Cambio de apósitos especializados según tipo de herida",
+  "Identificación temprana de signos de infección o complicaciones",
+  "Enfermeros con experiencia en curaciones complejas y/o terapia de drenaje post-quirúrgicas",
+  "Atención en la comodidad de tu hogar en Bucaramanga y área metropolitana",
+  "Comunicación directa con tu médico tratante si se requiere",
+];
+---
+
+<Layout title={title} description={description} image={ogImage}>
+  <ServicePageTemplate
+    title={title}
+    subtitle={subtitle}
+    description={description}
+    benefits={benefits}
+    heroImage="img/services/curaciones.webp"
+  >
+    
+  </ServicePageTemplate>
+
+  <Footer />
+  <WhatsAppButton />
+
+  <!-- ✅ Ajuste: En escritorio, enfocar la parte inferior de la imagen de curaciones -->
+  <style>
+    @media (min-width: 768px) {
+      /* Selecciona el div de fondo que contiene la imagen de curaciones */
+      [style*="curaciones.webp"] {
+        background-position: center bottom !important;
+      }
+    }
+  </style>
+</Layout>

@@ -1,0 +1,38 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
+import Footer from "../../components/Footer.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+
+const title = "Sueroterapia Post Party a Domicilio en Bucaramanga";
+const subtitle = "Hidratación intravenosa para una recuperación más rápida después de excesos";
+const description = "Después del consumo de alcohol, el cuerpo sufre deshidratación y pérdida de electrolitos, lo que provoca síntomas como dolor de cabeza, náuseas y fatiga. Nuestro servicio de Sueroterapia Post Party a domicilio ofrece hidratación intravenosa con suero y vitaminas, aplicada por personal de enfermería profesional, para apoyar una recuperación más rápida y ayudarte a retomar tu rutina con mayor bienestar.";
+
+const benefits = [
+  "Hidratación intravenosa de absorción inmediata",
+  "Aplicación de suero fisiológico y suero vitaminizado",
+  "Disminución de síntomas de guayabo como dolor de cabeza, mareo y fatiga",
+  "Procedimiento realizado por personal de enfermería capacitado",
+  "Atención cómoda y privada en tu domicilio",
+  "Duración aproximada de 30 a 45 minutos",
+  "Alternativa profesional cuando la hidratación oral no es suficiente"
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  image="/og/post-party.jpg" >
+
+  <ServicePageTemplate
+    title={title}
+    subtitle={subtitle}
+    description={description}
+    benefits={benefits}
+    heroImage="img/services/post-party.webp">
+  
+  </ServicePageTemplate>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>

@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
+import Footer from "../../components/Footer.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+
+const title = "Retiro de Puntos a Domicilio en Bucaramanga";
+const subtitle = "Remoción Segura de Suturas Post-Quirúrgicas";
+const description = "El retiro de puntos o suturas es un procedimiento delicado que debe realizarse en el momento adecuado y con técnica correcta para evitar dehiscencia de heridas o cicatrices inadecuadas. Nuestros enfermeros profesionales evalúan el estado de cicatrización, retiran cada punto con cuidado y realizan la curación final. Ideal para pacientes post-cirugía estética, cirugías generales o heridas traumáticas que ya cumplieron su tiempo de cicatrización.";
+
+const ogImage = "/og/retiro-de-puntos.jpg";
+
+const benefits = [
+  "Evaluación previa del estado de cicatrización de la herida",
+  "Retiro cuidadoso de suturas con instrumental estéril",
+  "Limpieza y curación final del sitio quirúrgico",
+  "Identificación de signos de dehiscencia o complicaciones",
+  "Especialmente recomendado para cirugías estéticas donde la cicatriz es importante",
+  "Recomendaciones de cuidado post-retiro para cicatrización óptima",
+  "Evita desplazamientos innecesarios cuando ya estás en recuperación en casa"
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  image={ogImage}
+>
+  <ServicePageTemplate
+    title={title}
+    subtitle={subtitle}
+    description={description}
+    benefits={benefits}
+    heroImage="img/services/retiro-de-puntos.webp" >
+  
+    <!-- ❌ Sin slot "icon" para evitar el círculo/ícono en el Hero -->
+  </ServicePageTemplate>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>

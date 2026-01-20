@@ -1,0 +1,205 @@
+---
+const services = [
+  {
+    title: "Curaciones",
+    slug: "curaciones",
+    img: "curaciones.webp",
+    alt: "Servicio de Curaciones - Enfermería a Domicilio en Bucaramanga",
+    desc: "Cambio de apósitos, manejo de heridas quirúrgicas y cuidados especializados.",
+    objectPosition: "object-bottom"
+  },
+  {
+    title: "Inyectología",
+    slug: "inyectologia",
+    img: "inyectologia.webp",
+    alt: "Servicio de Inyectología - Aplicación segura de medicamentos en Bucaramanga",
+    desc: "Aplicación segura de medicamentos intramusculares, subcutáneos e intradérmicos."
+  },
+  {
+    title: "Paso de Sueros",
+    slug: "paso-de-sueros",
+    img: "paso-de-sueros.webp",
+    alt: "Servicio de Paso de Sueros - Hidratación y medicación intravenosa en Bucaramanga",
+    desc: "Hidratación y medicación intravenosa con monitoreo profesional."
+  },
+  {
+    title: "Nebulizaciones",
+    slug: "nebulizaciones",
+    img: "nebulizaciones.webp",
+    alt: "Servicio de Nebulizaciones - Terapia respiratoria en Bucaramanga",
+    desc: "Terapia respiratoria para asma, EPOC y otras afecciones pulmonares."
+  },
+  {
+    title: "Retiro de Puntos",
+    slug: "retiro-de-puntos",
+    img: "retiro-de-puntos.webp",
+    alt: "Servicio de Retiro de Puntos - Remoción segura de suturas en Bucaramanga",
+    desc: "Remoción segura de suturas post-quirúrgicas con evaluación de cicatrización."
+  },
+  {
+    title: "Paso de Sondas",
+    slug: "sondas-vesicales",
+    img: "paso-de-sondas.webp",
+    alt: "Servicio de Paso de Sondas - Vesicales, gástricas y nasogástricas en Bucaramanga",
+    desc: "Vesicales, gástricas, nasogástricas y nefrostomía, con técnica estéril y manejo profesional."
+  },
+  {
+    title: "Manejo de Colostomías",
+    slug: "colostomias",
+    img: "manejo-de-colostomias.webp",
+    alt: "Servicio de Manejo de Colostomías en Bucaramanga",
+    desc: "Cuidado especializado de colostomías con enfoque humanizado."
+  },
+  {
+    title: "Diálisis Peritoneal",
+    slug: "dialisis-peritoneal",
+    img: "dialisis-peritoneal.webp",
+    alt: "Servicio de Diálisis Peritoneal en Bucaramanga",
+    desc: "Conexión y desconexión segura con técnica estéril estricta."
+  },
+  {
+    title: "Sueroterapia Post Party",
+    slug: "sueroterapia-post-party",
+    img: "post-party.webp",
+    alt: "Sueroterapia Post Party a domicilio en Bucaramanga",
+    desc: "Hidratación intravenosa a domicilio para una recuperación más rápida después de una noche de excesos."
+  }
+];
+---
+
+<section
+  id="servicios"
+  class="py-6 bg-white"
+  aria-labelledby="servicios-title"
+>
+  <div class="container mx-auto px-4">
+
+    <!-- Encabezado -->
+    <div class="text-center mb-12">
+      <h2
+        id="servicios-title"
+        class="text-3xl md:text-4xl font-bold text-[hsl(210_20%_20%)] mb-4"
+      >
+        Servicios de Enfermería a Domicilio
+      </h2>
+      <p class="text-xl text-[hsl(210_15%_45%)] max-w-3xl mx-auto">
+        En el Área Metropolitana de Bucaramanga
+      </p>
+    </div>
+
+    <!-- Carrusel responsive -->
+    <div class="px-2">
+      <div
+        id="carousel-track"
+        class="flex gap-6 pb-8 overflow-x-auto scrollbar-hide scroll-smooth -mx-2 px-2"
+      >
+        {services.map((s) => (
+          <a
+            href={`/enfermerosBucaramanga/services/${s.slug}`}
+            aria-label={`Ver servicio de ${s.title} en Bucaramanga`}
+            class="block w-[85%] sm:w-[60%] md:w-[45%] lg:w-[30%] shrink-0"
+            itemScope
+            itemType="https://schema.org/Service"
+          >
+            <div class="p-5 border border-[hsl(210_20%_90%)] rounded-xl h-full bg-white shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+              <img
+                src={import.meta.env.BASE_URL + `img/services/${s.img}`}
+                alt={s.alt}
+                loading="lazy"
+                itemProp="image"
+                class={`w-full h-48 object-cover rounded-lg mb-3 ${s.objectPosition || 'object-cover'}`}
+              />
+              <h3
+                class="font-semibold text-lg text-[hsl(210_20%_20%)]"
+                itemProp="name"
+              >
+                {s.title}
+              </h3>
+              <p
+                class="text-[hsl(210_15%_45%)] text-sm mt-1 leading-relaxed"
+                itemProp="description"
+              >
+                {s.desc}
+              </p>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Indicadores -->
+      <div class="flex justify-center mt-4">
+        <div id="indicators" class="flex gap-2"></div>
+      </div>
+    </div>
+
+    <!-- Tarjeta contacto -->
+    <div class="text-center mt-12">
+      <div class="inline-block p-6 bg-[hsl(30_15%_95%)] border border-[hsl(210_20%_90%)] rounded-xl">
+        <p class="text-[hsl(210_15%_45%)]">
+          ¿Necesitas un servicio no listado?
+          <span class="font-semibold text-[hsl(210_20%_20%)]">
+            Contáctanos.
+          </span>
+          Nos adaptamos a tu caso.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script is:client>
+const initCarousel = () => {
+  const track = document.getElementById('carousel-track');
+  const dotsContainer = document.getElementById('indicators');
+  if (!track || !dotsContainer) return;
+
+  const cards = Array.from(track.children);
+  let index = 0;
+
+  dotsContainer.innerHTML = '';
+
+  cards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.setAttribute('aria-label', `Ir al servicio ${i + 1}`);
+    dot.className = 'w-2 h-2 rounded-full bg-gray-300';
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const updateDots = () => {
+    dotsContainer.querySelectorAll('button').forEach((dot, i) => {
+      dot.className =
+        i === index
+          ? 'w-2 h-2 rounded-full bg-[hsl(210_100%_50%)]'
+          : 'w-2 h-2 rounded-full bg-gray-300';
+    });
+  };
+
+  const goToSlide = (i) => {
+    index = (i + cards.length) % cards.length;
+    track.scrollTo({
+      left: cards[index].offsetLeft,
+      behavior: 'smooth'
+    });
+    updateDots();
+  };
+
+  updateDots();
+  setInterval(() => goToSlide(index + 1), 4000);
+};
+
+document.readyState === 'loading'
+  ? document.addEventListener('DOMContentLoaded', initCarousel)
+  : initCarousel();
+</script>
+
+<style>
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+</style>
