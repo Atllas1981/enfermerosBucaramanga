@@ -1,0 +1,103 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+/* =========================
+   VALORES POR DEFECTO
+========================= */
+const {
+  title = "Enfermeros en Bucaramanga | Atención Domiciliaria",
+  description = "Enfermeros profesionales en Bucaramanga. Atención domiciliaria, curaciones, inyecciones y cuidado del paciente.",
+  image = "/og/default-og.jpg",
+} = Astro.props;
+
+/* =========================
+   CONFIGURACIÓN DEL SITIO
+========================= */
+const siteUrl = "https://atllas1981.github.io/enfermerosBucaramanga";
+
+/* =========================
+   URLs ABSOLUTAS
+========================= */
+const canonicalUrl = `${siteUrl}/`;
+
+const absoluteImage = image.startsWith("http")
+  ? image
+  : `${siteUrl}${image}`;
+---
+
+<!doctype html>
+<html lang="es-CO">
+  <head>
+    <!-- =========================
+         META BÁSICOS
+    ========================== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- =========================
+         OPEN GRAPH (WhatsApp / FB)
+    ========================== -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content="es_CO" />
+
+    <!-- OG IMAGE (CLAVE) -->
+    <meta property="og:image" content={absoluteImage} />
+    <meta property="og:image:secure_url" content={absoluteImage} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Servicios profesionales de enfermería a domicilio en Bucaramanga"
+    />
+
+    <!-- =========================
+         TWITTER CARD
+    ========================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absoluteImage} />
+
+    <!-- =========================
+         ICONOS
+    ========================== -->
+    <link rel="icon" href="/enfermerosBucaramanga/favicon.svg" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/enfermerosBucaramanga/apple-touch-icon.png"
+    />
+
+    <!-- =========================
+         METADATA
+    ========================== -->
+    <meta name="generator" content={Astro.generator} />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

@@ -1,0 +1,42 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
+import Footer from "../../components/Footer.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+
+const title = "Paso de Sondas (Vesicales, Nasogástricas y Nefrostomía) a Domicilio en Bucaramanga";
+const subtitle = "Atención Profesional, Segura y Humanizada";
+const description = "Ofrecemos el servicio de paso de sondas en casa para pacientes que requieren dispositivos vesicales, nasogástricos o nefrostomías. Cada atención es realizada por personal certificado que garantiza un acompañamiento respetuoso, seguro y con medidas de bioseguridad, ideal para personas con movilidad reducida, condiciones neurológicas o necesidades clínicas específicas.";
+
+const ogImage = "/og/sondas-vesicales.jpg";
+
+const benefits = [
+  "Atención profesional para sondas vesicales, nasogástricas y nefrostomías",
+  "Uso de técnica estéril y materiales certificados",
+  "Selección adecuada del dispositivo según las necesidades del paciente",
+  "Manejo cuidadoso para favorecer el confort y reducir molestias",
+  "Fijación correcta y verificación del dispositivo",
+  "Orientación al paciente y familia sobre cuidados generales",
+  "Aplicación de protocolos actualizados para prevenir complicaciones",
+  "Acompañamiento posterior según indicación profesional"
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  image={ogImage}
+>
+  <ServicePageTemplate
+    title={title}
+    subtitle={subtitle}
+    description={description}
+    benefits={benefits}
+    heroImage="img/services/paso-de-sondas.webp" 
+  >
+    
+  </ServicePageTemplate>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>

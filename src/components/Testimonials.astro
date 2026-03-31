@@ -1,0 +1,240 @@
+---
+const BASE_URL = import.meta.env.BASE_URL;
+
+const testimonials = [
+  {
+    text: "Gracias a su enfermera, mi recuperación tras la lipo fue tranquila y sin complicaciones. ¡Totalmente recomendado!",
+    name: "Ana M.",
+    location: "Girón",
+    avatar: "testimonials/ana-m.webp"
+  },
+  {
+    text: "Como familiar de un adulto mayor, me da tranquilidad saber que está en manos profesionales y humanas.",
+    name: "Carlos R.",
+    location: "Floridablanca",
+    avatar: "testimonials/carlos-r.webp"
+  },
+  {
+    text: "Excelente servicio y muy económico comparado con otras opciones. La enfermera fue muy atenta y profesional.",
+    name: "María P.",
+    location: "Bucaramanga",
+    avatar: "testimonials/maria-p.webp"
+  },
+  {
+    text: "Me ayudaron con las curaciones postquirúrgicas en casa, con mucha paciencia y respeto.",
+    name: "Luis F.",
+    location: "Piedecuesta",
+    avatar: "testimonials/luis-f.webp"
+  },
+  {
+    text: "Contraté el servicio de diálisis peritoneal y quedé impresionado por la puntualidad.",
+    name: "Elena G.",
+    location: "Bucaramanga",
+    avatar: "testimonials/elena-g.webp"
+  },
+  {
+    text: "Encontré un servicio honesto, humano y profesional.",
+    name: "Jorge D.",
+    location: "Girón",
+    avatar: "testimonials/jorge-d.webp"
+  }
+];
+
+// contadores fake solo visuales
+function random(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+---
+
+<section class="py-4 bg-white" aria-labelledby="testimonials-heading">
+  <div class="container mx-auto px-4">
+
+    <!-- Header -->
+    <header class="text-center mb-12 animate-fade-in">
+      <h2
+        id="testimonials-heading"
+        class="text-3xl md:text-4xl font-bold text-[hsl(210_20%_20%)] mb-4"
+      >
+        Lo Que Dicen Nuestros Pacientes
+      </h2>
+      <p class="text-xl text-[hsl(210_15%_45%)]">
+        Experiencias reales de atención de enfermería a domicilio
+      </p>
+    </header>
+
+    <!-- Carrusel responsive -->
+    <div class="px-2">
+      <div
+        id="testimonials-track"
+        class="flex gap-6 pb-8 overflow-x-auto scrollbar-hide scroll-smooth"
+      >
+        {testimonials.map((t) => {
+          const likes = random(20, 180);
+          const comments = random(3, 40);
+          const shares = random(1, 20);
+
+          return (
+            <figure
+              class="
+                shrink-0
+                w-[85vw]
+                sm:w-[60vw]
+                md:w-[45vw]
+                lg:w-[32%]
+                bg-white
+                rounded-2xl
+                border border-[hsl(210_20%_90%)]
+                shadow-sm
+                hover:shadow-lg
+                transition
+                overflow-hidden
+              "
+            >
+
+              <!-- Header -->
+              <header class="flex items-center gap-3 p-5">
+                <img
+                  src={`${BASE_URL}${t.avatar}`}
+                  alt={`Foto de ${t.name}`}
+                  class="w-12 h-12 rounded-full object-cover ring-2 ring-white shadow"
+                  loading="lazy"
+                />
+                <div>
+                  <p class="font-semibold text-[hsl(210_20%_20%)] leading-tight">
+                    {t.name}
+                  </p>
+                  <p class="text-xs text-[hsl(210_15%_45%)]">
+                    {t.location} · Hace 2 días
+                  </p>
+                </div>
+              </header>
+
+              <!-- Texto -->
+              <blockquote class="px-5 pb-4">
+                <p class="text-sm leading-relaxed text-[hsl(210_15%_40%)]">
+                  {t.text}
+                </p>
+              </blockquote>
+
+              <!-- Barra Social -->
+              <footer class="bg-[hsl(210_20%_98%)] border-t border-[hsl(210_20%_90%)]">
+
+                <!-- Contadores -->
+                <div class="flex items-center justify-between px-5 py-2 text-xs text-[hsl(210_15%_45%)]">
+                  <div class="flex items-center gap-2">
+                    <span class="reaction-bubble">
+                      <img
+                        src={`${BASE_URL}icon/reaction.svg`}
+                        alt="Reacción"
+                        class="w-full h-full object-cover"
+                      />
+                    </span>
+                    <span>{likes}</span>
+                  </div>
+                  <div class="flex gap-3">
+                    <span>{comments} comentarios</span>
+                    <span>{shares} compartidos</span>
+                  </div>
+                </div>
+
+                <!-- Acciones -->
+                <div class="grid grid-cols-3 border-t border-[hsl(210_20%_90%)]">
+                  <button class="social-btn flex items-center justify-center gap-1">
+  <img src={`${BASE_URL}icon/like.svg`} alt="" aria-hidden="true" class="w-4 h-4" />
+  Me gusta
+</button>
+<button class="social-btn flex items-center justify-center gap-1">
+  <img src={`${BASE_URL}icon/comment.svg`} alt="" aria-hidden="true" class="w-4 h-4" />
+  Comentar
+</button>
+<button class="social-btn flex items-center justify-center gap-1">
+  <img src={`${BASE_URL}icon/share.svg`} alt="" aria-hidden="true" class="w-4 h-4" />
+  Compartir
+</button>
+
+                </div>
+
+              </footer>
+
+            </figure>
+          );
+        })}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script is:client>
+  function initTestimonialsAutoplay() {
+    const track = document.getElementById('testimonials-track');
+    if (!track) return;
+
+    const cards = Array.from(track.children);
+    if (!cards.length) return;
+
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % cards.length;
+      track.scrollTo({
+        left: cards[index].offsetLeft,
+        behavior: 'smooth'
+      });
+    }, 4500);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTestimonialsAutoplay);
+  } else {
+    initTestimonialsAutoplay();
+  }
+</script>
+
+<style>
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+
+/* Burbuja reacción */
+.reaction-bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 20px;
+  border-radius: 999px;
+  background: #1877f2;
+  box-shadow: 0 2px 4px rgba(0,0,0,.15);
+  overflow: hidden;
+}
+
+/* Botones sociales */
+.social-btn {
+  padding: 10px 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: hsl(210 15% 35%);
+  transition: all .2s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.social-btn:hover {
+  background: hsl(210 20% 94%);
+  color: #1877f2;
+}
+
+.social-btn img {
+  filter: grayscale(100%) opacity(0.7);
+  transition: filter 0.2s ease;
+}
+
+.social-btn:hover img {
+  filter: grayscale(0%) opacity(1);
+}
+</style>

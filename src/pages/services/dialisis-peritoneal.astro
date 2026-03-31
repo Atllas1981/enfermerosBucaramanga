@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
+import Footer from "../../components/Footer.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+
+const title = "Diálisis Peritoneal a Domicilio en Bucaramanga";
+const subtitle = "Conexión y Desconexión Segura por Enfermeros Especializados";
+const description = "La diálisis peritoneal es un tratamiento de reemplazo renal que permite mayor autonomía e independencia para pacientes con enfermedad renal crónica. Sin embargo, requiere técnica estrictamente estéril para prevenir peritonitis y otras complicaciones graves. Nuestros enfermeros especializados en nefrología realizan la conexión y desconexión del sistema de diálisis peritoneal con máxima seguridad, siguiendo protocolos internacionales de asepsia.";
+
+const ogImage = "/og/dialisis-peritoneal.jpg";
+
+const benefits = [
+  "Conexión y desconexión con técnica estéril estricta",
+  "Evaluación del líquido drenado (color, volumen, características)",
+  "Cuidado del sitio de inserción del catéter Tenckhoff",
+  "Prevención de peritonitis mediante protocolos de bioseguridad",
+  "Registro detallado de volúmenes de entrada y salida",
+  "Educación al paciente y familia para autonomía progresiva",
+  "Enfermeros con experiencia certificada en diálisis peritoneal"
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  image={ogImage}
+>
+  <ServicePageTemplate
+    title={title}
+    subtitle={subtitle}
+    description={description}
+    benefits={benefits}
+    heroImage="img/services/dialisis-peritoneal.webp"
+  >
+    <!-- ❌ Sin slot "icon" para evitar el círculo/ícono en el Hero -->
+  </ServicePageTemplate>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>

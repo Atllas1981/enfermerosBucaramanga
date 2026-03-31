@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
+import Footer from "../../components/Footer.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+
+const title = "Manejo de Colostomías a Domicilio en Bucaramanga";
+const subtitle = "Cuidado Especializado y Humanizado de Ostomías";
+const description = "El manejo de colostomías, ileostomías y urostomías requiere conocimiento especializado, técnica correcta y un enfoque humanizado. Nuestros enfermeros profesionales brindan cuidado integral que incluye cambio de dispositivos, limpieza de la piel periostomal, prevención de complicaciones y educación al paciente y familia. Entendemos que vivir con una ostomía puede ser un desafío, por eso ofrecemos apoyo emocional además del cuidado técnico experto.";
+
+const ogImage = "/og/colostomias.jpg";
+
+const benefits = [
+  "Cambio de bolsa colectora y barrera protectora con técnica correcta",
+  "Limpieza y cuidado de la piel periostomal para prevenir irritaciones",
+  "Evaluación del estoma y detección temprana de complicaciones",
+  "Educación completa al paciente y cuidadores sobre autocuidado",
+  "Recomendación de productos adecuados según tipo de ostomía",
+  "Apoyo emocional y consejos prácticos para mejorar calidad de vida",
+  "Enfermeros con experiencia en ostomías y certificación en cuidado de heridas"
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  image={ogImage}
+>
+  <ServicePageTemplate
+    title={title}
+    subtitle={subtitle}
+    description={description}
+    benefits={benefits}
+    heroImage="img/services/manejo-de-colostomias.webp" 
+  >
+    <!-- ❌ Sin slot "icon" para evitar el círculo/ícono en el Hero -->
+  </ServicePageTemplate>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>

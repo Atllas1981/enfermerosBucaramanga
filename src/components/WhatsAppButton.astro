@@ -1,0 +1,37 @@
+---
+const phoneNumber = "573017205354";
+const message = encodeURIComponent("Hola, necesito información sobre sus servicios de enfermería a domicilio");
+---
+
+<a
+  href={`https://wa.me/${phoneNumber}?text=${message}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="fixed bottom-6 right-6 z-50 animate-scale-in"
+>
+  <div
+    class="h-14 w-14 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] shadow-[0_20px_40px_-10px_hsl(210_20%_20%_/_0.15)] hover:scale-110 transition-all duration-300 flex items-center justify-center"
+    aria-label="Contactar por WhatsApp"
+  >
+    <!-- WhatsApp official icon -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      class="h-7 w-7"
+      fill="white"
+    >
+      <path d="M16.001 3.2c-7.05 0-12.8 5.748-12.8 12.8 0 2.255.589 4.445 1.708 6.389L3.2 28.8l6.584-1.708A12.74 12.74 0 0 0 16 28.8c7.052 0 12.8-5.748 12.8-12.8s-5.748-12.8-12.8-12.8zm0 23.466a10.6 10.6 0 0 1-5.41-1.486l-.387-.229-3.908 1.014 1.04-3.81-.253-.392a10.6 10.6 0 1 1 8.918 4.903zm5.873-7.94c-.321-.161-1.902-.94-2.197-1.047-.296-.108-.512-.162-.728.162-.216.323-.837 1.047-1.026 1.263-.19.216-.379.243-.7.081-.321-.162-1.357-.5-2.584-1.595-.954-.85-1.598-1.897-1.785-2.221-.187-.323-.02-.497.142-.658.146-.146.323-.379.485-.568.162-.189.216-.324.324-.54.108-.216.054-.405-.027-.567-.081-.162-.728-1.754-.998-2.402-.262-.628-.529-.543-.728-.553-.189-.01-.405-.012-.62-.012-.216 0-.568.081-.865.405-.296.323-1.132 1.106-1.132 2.693 0 1.586 1.159 3.118 1.321 3.334.162.216 2.28 3.484 5.533 4.886.774.334 1.376.533 1.845.682.775.247 1.48.212 2.037.128.621-.092 1.902-.777 2.171-1.527.27-.75.27-1.394.189-1.527-.081-.135-.296-.216-.617-.378z"/>
+    </svg>
+  </div>
+</a>
+
+<style>
+  @keyframes scale-in {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .animate-scale-in {
+    animation: scale-in 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+    opacity: 0;
+  }
+</style>

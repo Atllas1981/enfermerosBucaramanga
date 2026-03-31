@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
+import Footer from "../../components/Footer.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+
+const title = "Nebulizaciones a Domicilio en Bucaramanga";
+const subtitle = "Terapia Respiratoria Profesional en Casa";
+const description = "Las nebulizaciones domiciliarias son esenciales para el tratamiento de enfermedades respiratorias como asma, EPOC, bronquitis y otras afecciones pulmonares. Este procedimiento administra medicamentos en forma de vapor directamente a las vías respiratorias, proporcionando alivio rápido y efectivo. Nuestros enfermeros profesionales realizan la técnica correcta, asegurando la dosis adecuada y la respuesta del paciente durante todo el procedimiento.";
+
+const ogImage = "/og/nebulizaciones.jpg";
+
+const benefits = [
+  "Preparación correcta de medicamentos según indicación médica",
+  "Uso de nebulizadores profesionales y mascarillas de tamaño adecuado, personalizadas según las necesidades del paciente.",
+  "Técnica adecuada de respiración para máxima efectividad",
+  "Monitoreo de saturación de oxígeno antes, durante y después",
+  "Evaluación de la respuesta al tratamiento y signos de alarma",
+  "Especialmente útil para adultos mayores, niños y pacientes con movilidad reducida",
+  "Registro de cada sesión y comunicación con el médico tratante si es necesario"
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  image={ogImage}
+>
+  <ServicePageTemplate
+    title={title}
+    subtitle={subtitle}
+    description={description}
+    benefits={benefits}
+    heroImage="img/services/nebulizaciones.webp" 
+  >
+    <!-- ❌ Sin slot "icon" para evitar el círculo/ícono en el Hero -->
+  </ServicePageTemplate>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>

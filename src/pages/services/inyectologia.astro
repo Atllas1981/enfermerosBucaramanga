@@ -1,0 +1,39 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
+import Footer from "../../components/Footer.astro";
+import WhatsAppButton from "../../components/WhatsAppButton.astro";
+
+const title = "Inyectología a Domicilio en Bucaramanga";
+const subtitle = "Aplicación Segura y Profesional de Medicamentos Inyectables";
+const description = "La inyectología domiciliaria es un servicio fundamental para quienes requieren aplicación de medicamentos por vía intramuscular, subcutánea o intradérmica. Nuestros enfermeros certificados realizan cada procedimiento con técnica correcta, garantizando la efectividad del tratamiento y minimizando molestias. Ideal para tratamientos prolongados, vacunas, antiinflamatorios, antibióticos y terapias de mantenimiento.";
+
+const ogImage = "/og/inyectologia.jpg";
+
+const benefits = [
+  "Aplicación por vía intravenosa, subcutánea e intramuscular según prescripción médica",
+  "Técnica adecuada que facilita la absorción del medicamento, reduce el dolor durante la aplicación y previene lesiones por procedimientos inadecuados.",
+  "Manejo seguro de medicamentos que requieren cadena de frío, garantizando su estabilidad, eficacia y seguridad durante el transporte y almacenamiento.",
+  "Registro detallado de cada aplicación y horarios",
+  "Rotación adecuada de sitios de punción para evitar complicaciones",
+  "Enfermeros capacitados en reacciones adversas y primeros auxilios",
+  "Servicio disponible para una sola aplicación o tratamientos prolongados"
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  image={ogImage}
+>
+  <ServicePageTemplate
+    title={title}
+    subtitle={subtitle}
+    description={description}
+    benefits={benefits}
+    heroImage="img/services/inyectologia.webp" >
+  </ServicePageTemplate>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>
