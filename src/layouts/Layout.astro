@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
   title?: string;
@@ -13,22 +13,26 @@ interface Props {
 const {
   title = "Enfermeros en Bucaramanga | Atención Domiciliaria",
   description = "Enfermeros profesionales en Bucaramanga. Atención domiciliaria, curaciones, inyecciones y cuidado del paciente.",
-  image = "/og/default-og.jpg",
+  image = "/og/default-og-v2.jpg",
 } = Astro.props;
 
 /* =========================
    CONFIGURACIÓN DEL SITIO
 ========================= */
-const siteUrl = "https://atllas1981.github.io/enfermerosBucaramanga";
+const siteUrl = "https://atllas1981.github.io";
+const basePath = "/enfermerosBucaramanga";
 
 /* =========================
    URLs ABSOLUTAS
 ========================= */
-const canonicalUrl = `${siteUrl}/`;
+// Generar la URL canónica correcta para cada página (no solo el index)
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 
+// Generar ruta absoluta de la imagen para redes sociales
+const imagePath = image.startsWith("/") ? image : `/${image}`;
 const absoluteImage = image.startsWith("http")
   ? image
-  : `${siteUrl}${image}`;
+  : `${siteUrl}${basePath}${imagePath}`;
 ---
 
 <!doctype html>
