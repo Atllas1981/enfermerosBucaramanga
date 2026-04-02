@@ -1,198 +1,92 @@
 ---
 const services = [
-  {
-    title: "Curaciones",
-    slug: "curaciones",
-    img: "curaciones.webp",
-    alt: "Servicio de Curaciones - Enfermería a Domicilio en Bucaramanga",
-    desc: "Cambio de apósitos, manejo de heridas quirúrgicas y cuidados especializados.",
-    objectPosition: "object-bottom",
-  },
-  {
-    title: "Inyectología",
-    slug: "inyectologia",
-    img: "inyectologia.webp",
-    alt: "Servicio de Inyectología - Aplicación segura de medicamentos en Bucaramanga",
-    desc: "Aplicación segura de medicamentos intramusculares, subcutáneos e intradérmicos.",
-  },
-  {
-    title: "Paso de Sueros",
-    slug: "paso-de-sueros",
-    img: "paso-de-sueros.webp",
-    alt: "Servicio de Paso de Sueros - Hidratación y medicación intravenosa en Bucaramanga",
-    desc: "Hidratación y medicación intravenosa con monitoreo profesional.",
-  },
-  {
-    title: "Nebulizaciones",
-    slug: "nebulizaciones",
-    img: "nebulizaciones.webp",
-    alt: "Servicio de Nebulizaciones - Terapia respiratoria en Bucaramanga",
-    desc: "Terapia respiratoria para asma, EPOC y otras afecciones pulmonares.",
-  },
-  {
-    title: "Retiro de Puntos",
-    slug: "retiro-de-puntos",
-    img: "retiro-de-puntos.webp",
-    alt: "Servicio de Retiro de Puntos - Remoción segura de suturas en Bucaramanga",
-    desc: "Remoción segura de suturas post-quirúrgicas con evaluación de cicatrización.",
-  },
-  {
-    title: "Paso de Sondas",
-    slug: "sondas-vesicales",
-    img: "paso-de-sondas.webp",
-    alt: "Servicio de Paso de Sondas - Vesicales, gástricas y nasogástricas en Bucaramanga",
-    desc: "Vesicales, gástricas, nasogástricas y nefrostomía, con técnica estéril y manejo profesional.",
-  },
-  {
-    title: "Manejo de Colostomías",
-    slug: "colostomias",
-    img: "manejo-de-colostomias.webp",
-    alt: "Servicio de Manejo de Colostomías en Bucaramanga",
-    desc: "Cuidado especializado de colostomías con enfoque humanizado.",
-  },
-  {
-    title: "Diálisis Peritoneal",
-    slug: "dialisis-peritoneal",
-    img: "dialisis-peritoneal.webp",
-    alt: "Servicio de Diálisis Peritoneal en Bucaramanga",
-    desc: "Conexión y desconexión segura con técnica estéril estricta.",
-  },
-  {
-    title: "Sueroterapia Post Party",
-    slug: "sueroterapia-post-party",
-    img: "post-party.webp",
-    alt: "Sueroterapia Post Party a domicilio en Bucaramanga",
-    desc: "Hidratación intravenosa a domicilio para una recuperación más rápida después de una noche de excesos.",
-  },
+  { title: "Curaciones", slug: "curaciones", img: "curaciones.webp", alt: "Servicio de Curaciones", desc: "Cambio de apósitos, manejo de heridas quirúrgicas y cuidados especializados." },
+  { title: "Inyectología", slug: "inyectologia", img: "inyectologia.webp", alt: "Servicio de Inyectología", desc: "Aplicación segura de medicamentos intramusculares y subcutáneos." },
+  { title: "Paso de Sueros", slug: "paso-de-sueros", img: "paso-de-sueros.webp", alt: "Servicio de Paso de Sueros", desc: "Hidratación y medicación intravenosa con monitoreo profesional." },
+  { title: "Nebulizaciones", slug: "nebulizaciones", img: "nebulizaciones.webp", alt: "Servicio de Nebulizaciones", desc: "Terapia respiratoria para asma, EPOC y afecciones pulmonares." },
+  { title: "Retiro de Puntos", slug: "retiro-de-puntos", img: "retiro-de-puntos.webp", alt: "Servicio de Retiro de Puntos", desc: "Remoción segura de suturas con evaluación de cicatrización." },
+  { title: "Paso de Sondas", slug: "sondas-vesicales", img: "paso-de-sondas.webp", alt: "Servicio de Paso de Sondas", desc: "Técnica estéril en sondas vesicales y gástricas con manejo profesional." },
+  { title: "Manejo de Colostomías", slug: "colostomias", img: "manejo-de-colostomias.webp", alt: "Servicio de Manejo de Colostomías", desc: "Cuidado especializado de colostomías con enfoque humanizado." },
+  { title: "Diálisis Peritoneal", slug: "dialisis-peritoneal", img: "dialisis-peritoneal.webp", alt: "Servicio de Diálisis Peritoneal", desc: "Conexión y desconexión segura con técnica estéril en casa." },
+  { title: "Sueroterapia Post Party", slug: "sueroterapia-post-party", img: "post-party.webp", alt: "Sueroterapia Post Party", desc: "Hidratación intravenosa rápida para recuperación tras excesos." },
 ];
 ---
 
-<section id="servicios" class="py-6 bg-white" aria-labelledby="servicios-title">
-  <div class="container mx-auto px-4">
-    <!-- Encabezado -->
-    <div class="text-center mb-12">
-      <h2
-        id="servicios-title"
-        class="text-3xl md:text-4xl font-bold text-[hsl(210_20%_20%)] mb-4"
-      >
-        Servicios de Enfermería a Domicilio
-      </h2>
-      <p class="text-xl text-[hsl(210_15%_45%)] max-w-3xl mx-auto">
-        En el Área Metropolitana de Bucaramanga
-      </p>
+<section id="servicios" class="py-16 bg-slate-50 overflow-hidden relative" aria-labelledby="servicios-title">
+  <div class="container mx-auto px-4 text-center mb-12">
+    <h2 id="servicios-title" class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
+      Servicios de Enfermería
+    </h2>
+    <p class="text-lg text-slate-600 max-w-2xl mx-auto italic font-medium text-balance">
+      Atención profesional y humanizada en Bucaramanga y área metropolitana.
+    </p>
+  </div>
+
+  <div class="relative container mx-auto px-4 md:px-16">
+    
+    <!-- GUÍA MÓVIL (Sugerencia de Scroll - No intercepta clics) -->
+    <div id="mobile-guide" class="md:hidden absolute right-6 top-1/2 -translate-y-1/2 z-40 pointer-events-none transition-all duration-700 ease-in-out">
+      <div class="flex flex-col items-center gap-2">
+        <div class="bg-blue-600/90 backdrop-blur-sm text-white p-4 rounded-full shadow-2xl animate-bounce">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+        <span class="text-[10px] font-bold uppercase text-blue-700 tracking-widest bg-white/90 px-3 py-1 rounded-full shadow-sm">Desliza</span>
+      </div>
     </div>
 
-    <!-- Carrusel responsive -->
-    <div class="px-2">
-      <div
-        id="carousel-track"
-        class="flex gap-6 pb-8 overflow-x-auto scrollbar-hide scroll-smooth -mx-2 px-2"
-      >
-        {
-          services.map((s) => (
-            <a
-              href={`/enfermerosBucaramanga/services/${s.slug}`}
-              aria-label={`Ver servicio de ${s.title} en Bucaramanga`}
-              class="block w-[85%] sm:w-[60%] md:w-[45%] lg:w-[30%] shrink-0"
-              itemScope
-              itemType="https://schema.org/Service"
-            >
-              <div class="p-5 border border-[hsl(210_20%_90%)] rounded-xl h-full bg-white shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
-                <img
-                  src={import.meta.env.BASE_URL + `/img/services/${s.img}`}
-                  alt={s.alt}
-                  loading="lazy"
-                  itemProp="image"
-                  class={`w-full h-48 object-cover rounded-lg mb-3 ${s.objectPosition || "object-cover"}`}
-                />
-                <h3
-                  class="font-semibold text-lg text-[hsl(210_20%_20%)]"
-                  itemProp="name"
-                >
-                  {s.title}
-                </h3>
-                <p
-                  class="text-[hsl(210_15%_45%)] text-sm mt-1 leading-relaxed"
-                  itemProp="description"
-                >
-                  {s.desc}
-                </p>
+    <!-- Botones de Navegación (Solo Escritorio) -->
+    <button id="prev-btn" class="hidden md:flex absolute left-2 top-[40%] z-20 w-12 h-12 items-center justify-center bg-white border border-slate-200 rounded-full shadow-md hover:bg-blue-600 hover:text-white transition-all duration-300" aria-label="Anterior">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+
+    <div id="carousel-track" class="flex gap-6 pb-12 overflow-x-auto snap-x snap-mandatory scrollbar-hide scroll-smooth cursor-grab active:cursor-grabbing">
+      {services.map((s) => (
+        <a href={`/enfermerosBucaramanga/services/${s.slug}`} class="group block w-[85%] sm:w-[65%] md:w-[45%] lg:w-[31%] shrink-0 snap-center" itemScope itemType="https://schema.org/Service">
+          <div class="flex flex-col h-full bg-white border border-slate-200 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 transform-gpu">
+            <!-- Imagen con efecto hover -->
+            <div class="relative h-56 overflow-hidden">
+              <img src={`${import.meta.env.BASE_URL}/img/services/${s.img}`} alt={s.alt} loading="lazy" itemProp="image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent"></div>
+            </div>
+            
+            <!-- Contenido de la Tarjeta -->
+            <div class="p-8 flex flex-col flex-grow text-left">
+              <h3 class="font-bold text-xl text-slate-800 mb-3 group-hover:text-blue-600 transition-colors" itemProp="name">
+                {s.title}
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed flex-grow mb-8 line-clamp-3" itemProp="description">
+                {s.desc}
+              </p>
+              
+              <!-- Botón Ver Detalles (Visual) -->
+              <div class="inline-flex items-center justify-center w-full py-4 px-6 bg-slate-50 text-blue-700 font-bold rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 text-sm uppercase tracking-widest border border-slate-100 shadow-sm">
+                Ver Detalles
               </div>
-            </a>
-          ))
-        }
-      </div>
-
-      <!-- Indicadores -->
-      <div class="flex justify-center mt-4">
-        <div id="indicators" class="flex gap-2"></div>
-      </div>
+            </div>
+          </div>
+        </a>
+      ))}
     </div>
 
-    <!-- Tarjeta contacto -->
-    <div class="text-center mt-12">
-      <div
-        class="inline-block p-6 bg-[hsl(30_15%_95%)] border border-[hsl(210_20%_90%)] rounded-xl"
-      >
-        <p class="text-[hsl(210_15%_45%)]">
-          ¿Necesitas un servicio no listado?
-          <span class="font-semibold text-[hsl(210_20%_20%)]">
-            Contáctanos.
-          </span>
-          Nos adaptamos a tu caso.
-        </p>
-      </div>
+    <button id="next-btn" class="hidden md:flex absolute right-2 top-[40%] z-20 w-12 h-12 items-center justify-center bg-white border border-slate-200 rounded-full shadow-md hover:bg-blue-600 hover:text-white transition-all duration-300" aria-label="Siguiente">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+
+    <!-- Barra de Progreso (UX 2026) -->
+    <div class="max-w-xs mx-auto h-2 bg-slate-200 rounded-full overflow-hidden shadow-inner">
+      <div id="progress-bar" class="h-full bg-blue-600 w-0 transition-all duration-300 ease-out"></div>
     </div>
   </div>
 </section>
 
-<script is:client>
-  const initCarousel = () => {
-    const track = document.getElementById("carousel-track");
-    const dotsContainer = document.getElementById("indicators");
-    if (!track || !dotsContainer) return;
-
-    const cards = Array.from(track.children);
-    let index = 0;
-
-    dotsContainer.innerHTML = "";
-
-    cards.forEach((_, i) => {
-      const dot = document.createElement("button");
-      dot.setAttribute("aria-label", `Ir al servicio ${i + 1}`);
-      dot.className = "w-2 h-2 rounded-full bg-gray-300";
-      dot.addEventListener("click", () => goToSlide(i));
-      dotsContainer.appendChild(dot);
-    });
-
-    const updateDots = () => {
-      dotsContainer.querySelectorAll("button").forEach((dot, i) => {
-        dot.className =
-          i === index
-            ? "w-2 h-2 rounded-full bg-[hsl(210_100%_50%)]"
-            : "w-2 h-2 rounded-full bg-gray-300";
-      });
-    };
-
-    const goToSlide = (i) => {
-      index = (i + cards.length) % cards.length;
-      track.scrollTo({
-        left: cards[index].offsetLeft,
-        behavior: "smooth",
-      });
-      updateDots();
-    };
-
-    updateDots();
-    setInterval(() => goToSlide(index + 1), 4000);
-  };
-
-  document.readyState === "loading"
-    ? document.addEventListener("DOMContentLoaded", initCarousel)
-    : initCarousel();
-</script>
-
 <style>
+  /* Ocultar scrollbar manteniendo funcionalidad nativa */
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -200,4 +94,48 @@ const services = [
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  /* Animación de entrada suave para la guía */
+  @keyframes pulse-custom {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+  }
 </style>
+
+<script is:inline>
+  const track = document.getElementById('carousel-track');
+  const progressBar = document.getElementById('progress-bar');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const mobileGuide = document.getElementById('mobile-guide');
+
+  if (track) {
+    track.addEventListener('scroll', () => {
+      // 1. Lógica de la barra de progreso
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      const scrollPercentage = (track.scrollLeft / maxScroll) * 100;
+      if (progressBar) progressBar.style.width = `${scrollPercentage}%`;
+
+      // 2. Lógica para desaparecer la guía móvil
+      if (track.scrollLeft > 40 && mobileGuide) {
+        mobileGuide.style.opacity = '0';
+        mobileGuide.style.transform = 'translateY(-50%) scale(0.5)';
+        setTimeout(() => mobileGuide.remove(), 700);
+      }
+    });
+
+    // 3. Lógica de botones de navegación (Escritorio)
+    const getScrollAmount = () => {
+      const firstCard = track.querySelector('a');
+      return firstCard ? firstCard.clientWidth + 24 : 300;
+    };
+
+    nextBtn?.addEventListener('click', () => {
+      track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    });
+
+    prevBtn?.addEventListener('click', () => {
+      track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    });
+  }
+</script>
