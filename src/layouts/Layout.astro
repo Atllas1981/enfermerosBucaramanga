@@ -11,28 +11,25 @@ interface Props {
    VALORES POR DEFECTO
 ========================= */
 const {
-  title = "Enfermeros en Bucaramanga | Atención Domiciliaria",
-  description = "Enfermeros profesionales en Bucaramanga. Atención domiciliaria, curaciones, inyecciones y cuidado del paciente.",
-  image = "/og/default-og-v2.jpg",
+  title = "Enfermeros en Bucaramanga | Atención Domiciliaria Profesional",
+  description = "Servicios de enfermería profesional a domicilio en Bucaramanga. Especialistas en cuidado de adulto mayor, inyectología y curaciones. ¡Atención humana y rápida!",
+  image = "/og/default-og-v2.jpg", // Asegúrate de que esta imagen exista en public/og/
 } = Astro.props;
 
 /* =========================
-   CONFIGURACIÓN DEL SITIO
+   CONFIGURACIÓN DE RUTAS (Blindada para GitHub Pages)
 ========================= */
-const siteUrl = "https://atllas1981.github.io";
-const basePath = "/enfermerosBucaramanga";
+// Astro.site viene de tu astro.config.mjs (https://atllas1981.github.io)
+// Astro.url.pathname ya incluye el /enfermerosBucaramanga/ gracias al 'base' del config
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 
-/* =========================
-   URLs ABSOLUTAS
-========================= */
-// Generar la URL canónica correcta para cada página (no solo el index)
-const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+// Generar URL absoluta de la imagen para que WhatsApp/Facebook la encuentren siempre
+const absoluteImage = new URL(import.meta.env.BASE_URL + image.replace(/^\//, ''), Astro.site).href;
 
-// Generar ruta absoluta de la imagen para redes sociales
-const imagePath = image.startsWith("/") ? image : `/${image}`;
-const absoluteImage = image.startsWith("http")
-  ? image
-  : `${siteUrl}${basePath}${imagePath}`;
+// Configuración de WhatsApp (Cambia el número por el real)
+const whatsappNumber = "573000000000"; 
+const whatsappMessage = encodeURIComponent("Hola, me gustaría solicitar información sobre los servicios de enfermería a domicilio.");
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 ---
 
 <!doctype html>
@@ -43,6 +40,7 @@ const absoluteImage = image.startsWith("http")
     ========================== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
 
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -56,17 +54,11 @@ const absoluteImage = image.startsWith("http")
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:locale" content="es_CO" />
-
-    <!-- OG IMAGE (CLAVE) -->
     <meta property="og:image" content={absoluteImage} />
     <meta property="og:image:secure_url" content={absoluteImage} />
-    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content="Servicios profesionales de enfermería a domicilio en Bucaramanga"
-    />
+    <meta property="og:image:alt" content="Enfermeros Profesionales en Bucaramanga" />
 
     <!-- =========================
          TWITTER CARD
@@ -77,31 +69,42 @@ const absoluteImage = image.startsWith("http")
     <meta name="twitter:image" content={absoluteImage} />
 
     <!-- =========================
-         ICONOS
+         ICONOS (Rutas automáticas)
     ========================== -->
-    <link rel="icon" href="/enfermerosBucaramanga/favicon.svg" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/enfermerosBucaramanga/apple-touch-icon.png"
-    />
-
-    <!-- =========================
-         METADATA
-    ========================== -->
-    <meta name="generator" content={Astro.generator} />
+    <!-- Astro manejará estas rutas basándose en tu config 'base' -->
+    <link rel="icon" type="image/svg+xml" href=`${import.meta.env.BASE_URL}favicon.svg` />
+    <link rel="apple-touch-icon" sizes="180x180" href=`${import.meta.env.BASE_URL}apple-touch-icon.png` />
   </head>
 
-  <body>
-    <slot />
+  <body class="min-h-screen bg-white text-gray-900">
+    <!-- Contenido de la página -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- BOTÓN DE WHATSAPP FLOTANTE (Opcional pero recomendado en Bucaramanga) -->
+    <a 
+      href={whatsappUrl}
+      class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contactar por WhatsApp"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+        <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+      </svg>
+    </a>
   </body>
 </html>
 
-<style>
-  html,
+<style is:global>
+  /* Reset básico y suavizado de fuentes */
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
+    font-family: system-ui, -apple-system, sans-serif;
   }
 </style>
