@@ -1,52 +1,99 @@
 ---
+/* Componente: Carrusel de Servicios de Enfermería - Bucaramanga (Versión Final Blindada) */
+
 const services = [
-  { title: "Curaciones", slug: "curaciones", img: "curaciones.webp", desc: "Cambio de apósitos y manejo experto de heridas quirúrgicas con técnica estéril." },
-  { title: "Inyectología", slug: "inyectologia", img: "inyectologia.webp", desc: "Aplicación segura de medicamentos intramusculares y subcutáneos en su hogar." },
-  { title: "Paso de Sueros", slug: "paso-de-sueros", img: "paso-de-sueros.webp", desc: "Hidratación y medicación intravenosa con monitoreo profesional constante." },
-  { title: "Nebulizaciones", slug: "nebulizaciones", img: "nebulizaciones.webp", desc: "Terapia respiratoria especializada para el alivio de afecciones pulmonares." },
-  { title: "Retiro de Puntos", slug: "retiro-de-puntos", img: "retiro-de-puntos.webp", desc: "Remoción segura de suturas con evaluación profesional de la cicatrización." },
-  { title: "Paso de Sondas", slug: "sondas-vesicales", img: "paso-de-sondas.webp", desc: "Instalación y manejo experto de sondas vesicales y gástricas en casa." },
-  { title: "Manejo de Colostomías", slug: "colostomias", img: "manejo-de-colostomias.webp", desc: "Cuidado integral y educación en el manejo de estomas con calidez humana." },
-  { title: "Diálisis Peritoneal", slug: "dialisis-peritoneal", img: "dialisis-peritoneal.webp", desc: "Conexión y desconexión segura bajo estrictos protocolos de bioseguridad." },
-  { title: "Sueroterapia Post Party", slug: "sueroterapia-post-party", img: "post-party.webp", desc: "Recuperación rápida y efectiva tras deshidratación o desgaste físico." },
+  { 
+    title: "Curación de Heridas", 
+    slug: "curacion-heridas-bucaramanga", 
+    img: "curaciones.webp", 
+    desc: "Manejo experto de heridas quirúrgicas, escaras y úlceras con técnica estéril y materiales de alta calidad en su hogar." 
+  },
+  { 
+    title: "Inyectología Certificada", 
+    slug: "inyectologia-domicilio-bucaramanga", 
+    img: "inyectologia.webp", 
+    desc: "Aplicación segura de medicamentos intramusculares y subcutáneos siguiendo estrictos protocolos de bioseguridad." 
+  },
+  { 
+    title: "Paso de Sueros", 
+    slug: "paso-de-sueros-bucaramanga", 
+    img: "paso-de-sueros.webp", 
+    desc: "Hidratación endovenosa y administración de medicamentos con monitoreo profesional constante para una recuperación efectiva." 
+  },
+  { 
+    title: "Nebulizaciones", 
+    slug: "nebulizaciones-respiratorias", 
+    img: "nebulizaciones.webp", 
+    desc: "Terapia respiratoria especializada para el alivio de asma, EPOC y afecciones pulmonares agudas con equipos profesionales." 
+  },
+  { 
+    title: "Retiro de Puntos", 
+    slug: "retiro-de-puntos-cirugia", 
+    img: "retiro-de-puntos.webp", 
+    desc: "Remoción técnica de suturas quirúrgicas con evaluación profesional del proceso de cicatrización para evitar infecciones." 
+  },
+  { 
+    title: "Paso de Sondas", 
+    slug: "sondas-vesicales-foley", 
+    img: "paso-de-sondas.webp", 
+    desc: "Instalación y cambio de sondas vesicales y gástricas con máxima higiene, garantizando la comodidad total del paciente." 
+  },
+  { 
+    title: "Manejo de Colostomías", 
+    slug: "cuidado-de-estomas", 
+    img: "manejo-de-colostomias.webp", 
+    desc: "Cuidado integral de estomas y educación personalizada al paciente y familia para un manejo seguro y autónomo." 
+  },
+  { 
+    title: "Diálisis Peritoneal", 
+    slug: "dialisis-peritoneal-casa", 
+    img: "dialisis-peritoneal.webp", 
+    desc: "Asistencia profesional en la conexión y desconexión de diálisis bajo protocolos médicos rigurosos en su domicilio." 
+  },
+  { 
+    title: "Sueroterapia Post Party", 
+    slug: "sueroterapia-post-party", 
+    img: "post-party.webp", 
+    desc: "Recuperación inmediata de energía y rehidratación profunda tras desgaste físico o deshidratación severa." 
+  },
 ];
+
+// Lógica de rutas maestra: evita el error de "página no encontrada"
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<section id="servicios" class="py-14 bg-slate-50 overflow-hidden relative">
+<section id="servicios" class="py-20 bg-slate-50 overflow-hidden relative border-t border-slate-200">
   <!-- ENCABEZADO -->
-  <div class="container mx-auto px-6 text-center mb-10">
-    <h2 class="text-4xl md:text-6xl font-black text-slate-900 mb-4 tracking-tight uppercase">
-      Servicios de Enfermería
+  <div class="container mx-auto px-6 text-center mb-16">
+    <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight uppercase">
+      Servicios de Enfermería en Bucaramanga
     </h2>
-    <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto font-medium leading-relaxed">
-      Atención profesional y humanizada en Bucaramanga y su área metropolitana.
+    <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto font-medium leading-relaxed italic">
+      Atención domiciliaria profesional en Bucaramanga, Floridablanca, Girón y Piedecuesta.
     </p>
   </div>
 
   <div class="relative max-w-[1440px] mx-auto px-4 md:px-16">
     
-    <!-- MÓVIL: MANO GESTUAL (Solo visible en < md) -->
+    <!-- AYUDA VISUAL MÓVIL -->
     <div id="swipe-hint" class="md:hidden absolute right-10 top-20 z-50 pointer-events-none flex flex-col items-center gap-2 transition-all duration-700">
-      <div class="bg-blue-600 text-white p-3 rounded-full shadow-2xl animate-[pulse_1.5s_infinite]">
+      <div class="bg-blue-600 text-white p-3 rounded-full shadow-2xl animate-pulse">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v5" />
-            <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v10" />
-            <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8" />
-            <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" />
+            <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v5M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v10M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" />
         </svg>
       </div>
-      <span class="text-[10px] font-black uppercase text-blue-700 bg-white/90 px-3 py-1 rounded-full shadow-sm border border-blue-100">Desliza</span>
+      <span class="text-[10px] font-black uppercase text-blue-700 bg-white/90 px-3 py-1 rounded-full border border-blue-100 shadow-sm">Desliza</span>
     </div>
 
-    <!-- ESCRITORIO: FLECHAS (Solo visibles en >= md) -->
-    <button id="prev-btn" class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 items-center justify-center bg-white border border-slate-200 rounded-full shadow-lg hover:bg-blue-600 hover:text-white transition-all active:scale-90 group" aria-label="Anterior">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 group-hover:-translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <!-- BOTONES NAVEGACIÓN -->
+    <button id="prev-btn" class="hidden md:flex absolute -left-2 top-1/2 -translate-y-1/2 z-40 w-14 h-14 items-center justify-center bg-white border border-slate-200 rounded-full shadow-xl hover:bg-blue-600 hover:text-white transition-all active:scale-90 group" aria-label="Anterior">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
       </svg>
     </button>
 
-    <button id="next-btn" class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 items-center justify-center bg-white border border-slate-200 rounded-full shadow-lg hover:bg-blue-600 hover:text-white transition-all active:scale-90 group" aria-label="Siguiente">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <button id="next-btn" class="hidden md:flex absolute -right-2 top-1/2 -translate-y-1/2 z-40 w-14 h-14 items-center justify-center bg-white border border-slate-200 rounded-full shadow-xl hover:bg-blue-600 hover:text-white transition-all active:scale-90 group" aria-label="Siguiente">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
       </svg>
     </button>
@@ -54,40 +101,49 @@ const services = [
     <!-- TRACK DEL CARRUSEL -->
     <div
       id="carousel-track"
-      class="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-10 cursor-grab active:cursor-grabbing scroll-smooth"
+      class="flex gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-12 cursor-grab active:cursor-grabbing scroll-smooth"
     >
       {services.map((s) => (
-        <div class="min-w-[88%] sm:min-w-[50%] md:min-w-[31.5%] snap-center">
-          <div class="bg-white rounded-[2rem] border border-slate-200 overflow-hidden shadow-sm flex flex-col h-full hover:shadow-xl transition-all duration-500">
+        <div class="min-w-[85%] sm:min-w-[45%] md:min-w-[30%] snap-center">
+          <article class="bg-white rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-md flex flex-col h-full hover:shadow-2xl transition-all duration-500 group">
             
-            <!-- IMAGEN CON BOTÓN -->
-            <div class="relative h-52 md:h-60 overflow-hidden group">
-              <img src={`${import.meta.env.BASE_URL}/img/services/${s.img}`} alt={s.title} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-              <div class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+            <div class="relative h-60 md:h-64 overflow-hidden">
+              <img 
+                src={`${base}/img/services/${s.img}`} 
+                alt={`${s.title} a domicilio Bucaramanga`} 
+                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                loading="lazy" 
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/10 to-transparent"></div>
               
-              <div class="absolute inset-x-0 bottom-5 flex justify-center px-4">
-                <a href={`/enfermerosBucaramanga/services/${s.slug}`} class="bg-white text-blue-800 text-[11px] font-black uppercase tracking-[0.15em] py-3.5 px-10 rounded-2xl shadow-2xl hover:bg-blue-600 hover:text-white transition-all active:scale-95 border border-white">
-                  Ver Detalles
+              <!-- BOTÓN CON RUTA DINÁMICA REPARADA -->
+              <div class="absolute inset-x-0 bottom-6 flex justify-center px-4">
+                <a 
+                  href={`${base}/services/${s.slug}/`.replace(/\/+/g, '/')} 
+                  class="bg-white text-blue-700 text-[12px] font-black uppercase tracking-widest py-3.5 px-10 rounded-xl shadow-2xl hover:bg-blue-700 hover:text-white transition-all transform hover:-translate-y-1 active:scale-95 border border-white"
+                >
+                  Consultar Tarifa
                 </a>
               </div>
             </div>
 
-            <!-- CONTENIDO (Fuente aumentada para adultos mayores) -->
             <div class="p-8 text-left bg-white flex-grow">
-              <h3 class="text-2xl font-bold text-slate-800 leading-tight mb-4">{s.title}</h3>
-              <p class="text-slate-600 text-base md:text-lg leading-relaxed line-clamp-3 md:line-clamp-none">
+              <h3 class="text-2xl font-extrabold text-slate-800 leading-tight mb-4 group-hover:text-blue-700 transition-colors">
+                {s.title}
+              </h3>
+              <p class="text-slate-600 text-base md:text-lg leading-relaxed line-clamp-4">
                 {s.desc}
               </p>
             </div>
-          </div>
+          </article>
         </div>
       ))}
     </div>
 
-    <!-- BARRA DE PROGRESO -->
-    <div class="flex justify-center -mt-2">
-      <div class="w-full max-w-[150px] h-2 bg-slate-200 rounded-full overflow-hidden border border-slate-300/20">
-        <div id="scroll-progress" class="h-full bg-blue-600 w-0 transition-all duration-300 rounded-full shadow-[0_0_10px_rgba(37,99,235,0.4)]"></div>
+    <!-- PROGRESO -->
+    <div class="flex justify-center -mt-4">
+      <div class="w-48 h-1.5 bg-slate-200 rounded-full overflow-hidden border border-slate-300/20">
+        <div id="scroll-progress" class="h-full bg-blue-600 w-0 transition-all duration-150 rounded-full"></div>
       </div>
     </div>
   </div>
@@ -99,53 +155,62 @@ const services = [
 </style>
 
 <script is:inline>
-  const track = document.getElementById('carousel-track');
-  const progress = document.getElementById('scroll-progress');
-  const hint = document.getElementById('swipe-hint');
-  const nextBtn = document.getElementById('next-btn');
-  const prevBtn = document.getElementById('prev-btn');
-  const section = document.getElementById('servicios');
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('carousel-track');
+    const section = document.getElementById('servicios');
+    const progress = document.getElementById('scroll-progress');
+    const hint = document.getElementById('swipe-hint');
+    const nextBtn = document.getElementById('next-btn');
+    const prevBtn = document.getElementById('prev-btn');
 
-  if (track) {
-    // 1. Lógica de Scroll (Progreso y Ocultar Mano)
+    if (!track || !section) return;
+
+    // 1. BARRA DE PROGRESO
     track.addEventListener('scroll', () => {
       const maxScroll = track.scrollWidth - track.clientWidth;
       const percentage = (track.scrollLeft / maxScroll) * 100;
       if (progress) progress.style.width = `${percentage}%`;
 
-      if (track.scrollLeft > 30 && hint) {
+      if (track.scrollLeft > 20 && hint) {
         hint.style.opacity = '0';
-        hint.style.transform = 'translateX(20px)';
-        setTimeout(() => hint.remove(), 700);
+        setTimeout(() => hint.remove(), 500);
       }
     });
 
-    // 2. Lógica de Botones (Escritorio)
-    const getCardWidth = () => track.querySelector('.snap-center').clientWidth + 24; // Card + gap
-    
-    nextBtn?.addEventListener('click', () => {
-      track.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
-    });
+    // 2. BOTONES
+    const getStep = () => {
+      const card = track.querySelector('.snap-center');
+      return card ? card.clientWidth + 32 : 300;
+    };
+    nextBtn?.addEventListener('click', () => track.scrollBy({ left: getStep(), behavior: 'smooth' }));
+    prevBtn?.addEventListener('click', () => track.scrollBy({ left: -getStep(), behavior: 'smooth' }));
 
-    prevBtn?.addEventListener('click', () => {
-      track.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
-    });
+    // 3. FUNCIÓN DE ASOMO (PEEK EFFECT)
+    const executePeek = () => {
+      if (track.scrollLeft > 0) return;
 
-    // 3. Micro-rebote (Móvil) al entrar en vista
+      const originalSnap = track.style.scrollSnapType;
+      track.style.scrollSnapType = 'none';
+
+      track.scrollTo({ left: 120, behavior: 'smooth' });
+
+      setTimeout(() => {
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+        setTimeout(() => {
+          track.style.scrollSnapType = originalSnap || 'x mandatory';
+        }, 600);
+      }, 800);
+    };
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            if (track.scrollLeft === 0) {
-              track.scrollBy({ left: 80, behavior: 'smooth' });
-              setTimeout(() => track.scrollBy({ left: -80, behavior: 'smooth' }), 600);
-            }
-          }, 800);
+          setTimeout(executePeek, 700);
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.4 });
+    }, { threshold: 0.3 });
 
-    if (section) observer.observe(section);
-  }
+    observer.observe(section);
+  });
 </script>
